@@ -15,6 +15,7 @@
 		AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */; };
 		AA6F5B1C1C2C9D8C00DB156C /* VoxelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B1B1C2C9D8C00DB156C /* VoxelTests.swift */; };
 		AA6F5B271C2C9D8C00DB156C /* VoxelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */; };
+		D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C5C0D167A1469FA1EDC99D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		83C5C0D167A1469FA1EDC99D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		AA6F5B221C2C9D8C00DB156C /* VoxelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxelUITests.swift; sourceTree = "<group>"; };
 		AA6F5B281C2C9D8C00DB156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,8 @@
 				AA6F5B1A1C2C9D8C00DB156C /* VoxelTests */,
 				AA6F5B251C2C9D8C00DB156C /* VoxelUITests */,
 				AA6F5B011C2C9D8C00DB156C /* Products */,
+				E324CE08236C760D202E013F /* Pods */,
+				B1B20D5DAF110157DA24D6A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +135,23 @@
 			path = VoxelUITests;
 			sourceTree = "<group>";
 		};
+		B1B20D5DAF110157DA24D6A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83C5C0D167A1469FA1EDC99D /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E324CE08236C760D202E013F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */,
+				F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA6F5B2B1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "Voxel" */;
 			buildPhases = (
+				28EF463898E58C483C1DD953 /* Check Pods Manifest.lock */,
 				AA6F5AFC1C2C9D8C00DB156C /* Sources */,
 				AA6F5AFD1C2C9D8C00DB156C /* Frameworks */,
 				AA6F5AFE1C2C9D8C00DB156C /* Resources */,
+				22E4286479147DC5EFC88053 /* Embed Pods Frameworks */,
+				A182550A967C81698ECC6E01 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22E4286479147DC5EFC88053 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28EF463898E58C483C1DD953 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A182550A967C81698ECC6E01 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA6F5AFC1C2C9D8C00DB156C /* Sources */ = {
@@ -399,9 +474,11 @@
 		};
 		AA6F5B2C1C2C9D8C00DB156C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Voxel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,9 +487,11 @@
 		};
 		AA6F5B2D1C2C9D8C00DB156C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Voxel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +565,7 @@
 				AA6F5B2D1C2C9D8C00DB156C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA6F5B2E1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +574,7 @@
 				AA6F5B301C2C9D8C00DB156C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA6F5B311C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +583,7 @@
 				AA6F5B331C2C9D8C00DB156C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
