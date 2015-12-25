@@ -11,12 +11,12 @@ import UIKit
 
 class HNGlobal: NSObject {
     
+    static let mainCornerRadius = 6
+    
     override init() {
        
         super.init()
     }
-    
-    
     
     
 }

@@ -74,7 +74,7 @@
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-VI-ZNp">
                             <rect key="frame" x="0.0" y="59" width="250" height="3"/>
-                            <color key="backgroundColor" red="0.0013963011253698284" green="0.822265625" blue="0.1472611299629033" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.54509803921568623" green="0.76470588235294112" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="3" id="9hj-gF-Dik"/>
                             </constraints>
@@ -96,14 +96,11 @@
                         <constraint firstAttribute="trailing" secondItem="Hzz-WK-tCj" secondAttribute="trailing" id="UEX-jj-28t"/>
                         <constraint firstItem="hNE-VI-ZNp" firstAttribute="leading" secondItem="GjR-LS-kRv" secondAttribute="leading" id="YY4-OL-ZiD"/>
                         <constraint firstAttribute="trailing" secondItem="hNE-VI-ZNp" secondAttribute="trailing" id="ZfZ-90-Pgs"/>
-                        <constraint firstItem="Hzz-WK-tCj" firstAttribute="top" secondItem="hNE-VI-ZNp" secondAttribute="bottom" id="dAe-NY-s5D"/>
                         <constraint firstItem="hNE-VI-ZNp" firstAttribute="leading" secondItem="GjR-LS-kRv" secondAttribute="leading" id="eNZ-4m-Yuw"/>
-                        <constraint firstItem="3Yl-rU-R9I" firstAttribute="top" secondItem="hNE-VI-ZNp" secondAttribute="bottom" id="fdr-cK-Ych"/>
                         <constraint firstAttribute="trailing" secondItem="DmE-7u-Pj1" secondAttribute="trailing" id="hcs-HI-YQr"/>
                         <constraint firstAttribute="bottom" secondItem="3Yl-rU-R9I" secondAttribute="bottom" constant="91" id="ixi-y8-QcK"/>
                         <constraint firstAttribute="trailing" secondItem="3Yl-rU-R9I" secondAttribute="trailing" constant="8" id="oum-Nx-gc6"/>
                         <constraint firstItem="DmE-7u-Pj1" firstAttribute="top" secondItem="GjR-LS-kRv" secondAttribute="top" id="qXx-JK-Jm9"/>
-                        <constraint firstItem="hNE-VI-ZNp" firstAttribute="top" secondItem="DmE-7u-Pj1" secondAttribute="bottom" id="r6U-wl-18P"/>
                         <constraint firstAttribute="trailing" secondItem="0ka-S0-dDC" secondAttribute="trailing" id="zX3-hU-I27"/>
                     </constraints>
                 </view>
@@ -114,9 +111,12 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="3Yl-rU-R9I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="5mW-zz-mBH"/>
                 <constraint firstItem="6if-Kx-0ht" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DM3-jE-TRv"/>
+                <constraint firstItem="Hzz-WK-tCj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="P7Y-3N-wXI"/>
                 <constraint firstAttribute="bottom" secondItem="GjR-LS-kRv" secondAttribute="bottom" id="Sux-oB-rO1"/>
                 <constraint firstItem="GjR-LS-kRv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aZ9-Rg-vNJ"/>
+                <constraint firstItem="hNE-VI-ZNp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="59" id="bLt-mN-p3p"/>
                 <constraint firstItem="GjR-LS-kRv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bae-UH-W5c"/>
                 <constraint firstAttribute="bottom" secondItem="6if-Kx-0ht" secondAttribute="bottom" id="dnv-pn-1Nw"/>
                 <constraint firstItem="6if-Kx-0ht" firstAttribute="leading" secondItem="GjR-LS-kRv" secondAttribute="trailing" id="rVt-mi-1Bk"/>

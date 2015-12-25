@@ -54,7 +54,7 @@ class HNDrawerViewController: UIViewController {
         self.emptySpace.addGestureRecognizer(tapGestureRec)
 
         // Create Buttons
-        var yPos: CGFloat = 10
+        var yPos: CGFloat = 0
         var count: Int = 0
         
         for header in headerTitles {

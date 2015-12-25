@@ -13,6 +13,7 @@ public enum HNColorTypes {
     case MainBGColor, SecondaryBGColor
     case MainTextColor, SecondaryTextColor
     case OrangeActionColor
+    case WhiteTransluscent
 }
 
 extension UIColor {
@@ -83,6 +84,8 @@ extension UIColor {
                 color = UIColor(rgba: "#A7C3D6")
             case .OrangeActionColor:
                 color = UIColor(rgba: "#FFA500")
+            case .WhiteTransluscent:
+                color = UIColor.whiteColor().colorWithAlphaComponent(0.4)
             default:
                 color = UIColor.grayColor()
         }

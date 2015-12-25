@@ -46,7 +46,7 @@
                 <outlet property="mainLabel" destination="0a0-u7-rA6" id="nzI-eF-94Z"/>
                 <outlet property="notifDot" destination="JjB-Na-5V5" id="QET-8H-LjC"/>
             </connections>
-            <point key="canvasLocation" x="309" y="616.5"/>
+            <point key="canvasLocation" x="221" y="483"/>
         </view>
     </objects>
 </document>

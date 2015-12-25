@@ -30,8 +30,8 @@ class HNMainNavigationController: UINavigationController, HNDrawerViewController
         mainViewController.delegate = self
         self.viewControllers = [mainViewController]
         
-        
     }
+    
     
     override func viewWillAppear(animated: Bool) {
 
