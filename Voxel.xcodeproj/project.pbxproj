@@ -15,6 +15,34 @@
 		AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */; };
 		AA6F5B1C1C2C9D8C00DB156C /* VoxelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B1B1C2C9D8C00DB156C /* VoxelTests.swift */; };
 		AA6F5B271C2C9D8C00DB156C /* VoxelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */; };
+		AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */; };
+		AA6F5B3D1C2CAF5A00DB156C /* HNString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */; };
+		AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */; };
+		AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */; };
+		AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */; };
+		AA6F5B451C2CAF6C00DB156C /* HNDrawerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */; };
+		AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */; };
+		AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */; };
+		AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B4C1C2D033E00DB156C /* HNColor.swift */; };
+		AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */; };
+		AA6F5B5A1C2D061900DB156C /* FVHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */; };
+		AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */; };
+		AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */; };
+		AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */; };
+		AA6F5B661C2D065300DB156C /* FVLoadImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */; };
+		AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */; };
+		AA6F5B6A1C2D06A800DB156C /* FVCustomDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */; };
+		AA6F5B6D1C2D06B500DB156C /* FVSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */; };
+		AA6F5B6E1C2D06B500DB156C /* FVSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */; };
+		AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */; };
+		AA6F5B721C2D152A00DB156C /* FVMyPatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */; };
+		AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */; };
+		AA6F5B781C2D15D400DB156C /* FVPreloadedImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */; };
+		AA6F5B7C1C2D162200DB156C /* iPadBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B7B1C2D162200DB156C /* iPadBannerView.m */; };
+		AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */; };
+		AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */; };
+		AA6F5B831C2D16F700DB156C /* FVCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */; };
+		AA6F5B841C2D16F700DB156C /* FVCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */; };
 		D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C5C0D167A1469FA1EDC99D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +80,36 @@
 		AA6F5B221C2C9D8C00DB156C /* VoxelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxelUITests.swift; sourceTree = "<group>"; };
 		AA6F5B281C2C9D8C00DB156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNGlobal.swift; sourceTree = "<group>"; };
+		AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNString.swift; sourceTree = "<group>"; };
+		AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNDrawerViewController.swift; sourceTree = "<group>"; };
+		AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNDrawerViewController.xib; sourceTree = "<group>"; };
+		AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNDrawerButton.swift; sourceTree = "<group>"; };
+		AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNDrawerButton.xib; sourceTree = "<group>"; };
+		AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNAbstractViewController.swift; sourceTree = "<group>"; };
+		AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNMainNavigationController.swift; sourceTree = "<group>"; };
+		AA6F5B4C1C2D033E00DB156C /* HNColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNColor.swift; sourceTree = "<group>"; };
+		AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVHomeViewController.swift; sourceTree = "<group>"; };
+		AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVHomeViewController.xib; sourceTree = "<group>"; };
+		AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPreloadedPatternViewController.swift; sourceTree = "<group>"; };
+		AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVPreloadedPatternViewController.xib; sourceTree = "<group>"; };
+		AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVLoadImageViewController.swift; sourceTree = "<group>"; };
+		AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVLoadImageViewController.xib; sourceTree = "<group>"; };
+		AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVCustomDrawViewController.swift; sourceTree = "<group>"; };
+		AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVCustomDrawViewController.xib; sourceTree = "<group>"; };
+		AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsViewController.swift; sourceTree = "<group>"; };
+		AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsViewController.xib; sourceTree = "<group>"; };
+		AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVMyPatternViewController.swift; sourceTree = "<group>"; };
+		AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMyPatternViewController.xib; sourceTree = "<group>"; };
+		AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPreloadedImagesViewController.swift; sourceTree = "<group>"; };
+		AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVPreloadedImagesViewController.xib; sourceTree = "<group>"; };
+		AA6F5B791C2D162100DB156C /* Voxel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voxel-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA6F5B7A1C2D162200DB156C /* iPadBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadBannerView.h; sourceTree = "<group>"; };
+		AA6F5B7B1C2D162200DB156C /* iPadBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadBannerView.m; sourceTree = "<group>"; };
+		AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVConnectionViewController.swift; sourceTree = "<group>"; };
+		AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVConnectionViewController.xib; sourceTree = "<group>"; };
+		AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVCameraViewController.swift; sourceTree = "<group>"; };
+		AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVCameraViewController.xib; sourceTree = "<group>"; };
 		F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +167,11 @@
 				AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */,
 				AA6F5B051C2C9D8C00DB156C /* ViewController.swift */,
 				AA6F5B071C2C9D8C00DB156C /* Main.storyboard */,
+				AA6F5B471C2CAF8800DB156C /* Convenience */,
+				AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */,
+				AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */,
+				AA6F5B461C2CAF7800DB156C /* Navigation Drawer */,
+				AA6F5B541C2D05B600DB156C /* View Controllers */,
 				AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */,
 				AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */,
 				AA6F5B121C2C9D8C00DB156C /* Info.plist */,
@@ -133,6 +196,71 @@
 				AA6F5B281C2C9D8C00DB156C /* Info.plist */,
 			);
 			path = VoxelUITests;
+			sourceTree = "<group>";
+		};
+		AA6F5B461C2CAF7800DB156C /* Navigation Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */,
+				AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */,
+				AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */,
+				AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */,
+			);
+			name = "Navigation Drawer";
+			sourceTree = "<group>";
+		};
+		AA6F5B471C2CAF8800DB156C /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */,
+				AA6F5B4C1C2D033E00DB156C /* HNColor.swift */,
+				AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */,
+			);
+			name = Convenience;
+			sourceTree = "<group>";
+		};
+		AA6F5B541C2D05B600DB156C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */,
+				AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */,
+				AA6F5B7A1C2D162200DB156C /* iPadBannerView.h */,
+				AA6F5B7B1C2D162200DB156C /* iPadBannerView.m */,
+				AA6F5B731C2D159300DB156C /* My Pattern */,
+				AA6F5B741C2D15C000DB156C /* Preloaded Pattern */,
+				AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */,
+				AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */,
+				AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */,
+				AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */,
+				AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */,
+				AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */,
+				AA6F5B791C2D162100DB156C /* Voxel-Bridging-Header.h */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AA6F5B731C2D159300DB156C /* My Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */,
+				AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */,
+				AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */,
+				AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */,
+				AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */,
+				AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */,
+			);
+			name = "My Pattern";
+			sourceTree = "<group>";
+		};
+		AA6F5B741C2D15C000DB156C /* Preloaded Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */,
+				AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */,
+				AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */,
+				AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */,
+			);
+			name = "Preloaded Pattern";
 			sourceTree = "<group>";
 		};
 		B1B20D5DAF110157DA24D6A2 /* Frameworks */ = {
@@ -259,8 +387,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6F5B6A1C2D06A800DB156C /* FVCustomDrawViewController.xib in Resources */,
+				AA6F5B841C2D16F700DB156C /* FVCameraViewController.xib in Resources */,
+				AA6F5B781C2D15D400DB156C /* FVPreloadedImagesViewController.xib in Resources */,
+				AA6F5B451C2CAF6C00DB156C /* HNDrawerButton.xib in Resources */,
+				AA6F5B6E1C2D06B500DB156C /* FVSettingsViewController.xib in Resources */,
+				AA6F5B5A1C2D061900DB156C /* FVHomeViewController.xib in Resources */,
+				AA6F5B721C2D152A00DB156C /* FVMyPatternViewController.xib in Resources */,
+				AA6F5B661C2D065300DB156C /* FVLoadImageViewController.xib in Resources */,
 				AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */,
+				AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */,
+				AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */,
 				AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */,
+				AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */,
 				AA6F5B091C2C9D8C00DB156C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,9 +473,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */,
+				AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */,
+				AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */,
+				AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */,
+				AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */,
+				AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */,
+				AA6F5B6D1C2D06B500DB156C /* FVSettingsViewController.swift in Sources */,
+				AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */,
+				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
+				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
+				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
+				AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */,
+				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,
 				AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */,
 				AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */,
+				AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */,
+				AA6F5B3D1C2CAF5A00DB156C /* HNString.swift in Sources */,
+				AA6F5B7C1C2D162200DB156C /* iPadBannerView.m in Sources */,
 				AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */,
+				AA6F5B831C2D16F700DB156C /* FVCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,11 +633,14 @@
 			baseConfigurationReference = 5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Voxel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voxel/Voxel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -490,11 +649,13 @@
 			baseConfigurationReference = F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Voxel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voxel/Voxel-Bridging-Header.h";
 			};
 			name = Release;
 		};
