@@ -9,7 +9,7 @@
 import UIKit
 
 
-class HNMainNavigationController: UINavigationController, HNDrawerViewControllerDelegate, HNAbstractViewControllerDelegate {
+class HNMainNavigationController: FVNavigationController, HNDrawerViewControllerDelegate, HNAbstractViewControllerDelegate {
 
     var drawerVC: HNDrawerViewController?
     
@@ -19,12 +19,9 @@ class HNMainNavigationController: UINavigationController, HNDrawerViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set navigation bar tint color
-        self.navigationBar.barTintColor = UIColor(colorType: HNColorTypes.NavigationBarColor)
-        self.navigationBar.tintColor = UIColor.whiteColor()
-        let font = UIFont(name: "Helvetica-Bold", size: 18)
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName :UIColor.whiteColor(), NSFontAttributeName: font!]
-
+        // Status bar
+        self.setNeedsStatusBarAppearanceUpdate()
+        
         // Do any additional setup after loading the view.
         let mainViewController: FVHomeViewController! = FVHomeViewController(nibName:"FVHomeViewController", bundle: nil)
         mainViewController.delegate = self
@@ -121,7 +118,7 @@ class HNMainNavigationController: UINavigationController, HNDrawerViewController
         retractNavigationDrawer()
     }
     
-    // MARK - HNAbstractViewController Delegate
+    // MARK - HNAbstractViewController Delegate Methods
     func abstractViewController(controller: HNAbstractViewController, switchToHeaderIndex index: Int) {
         self.switchToHeaderIndex(index)
     }
@@ -129,6 +126,13 @@ class HNMainNavigationController: UINavigationController, HNDrawerViewController
     
     func drawerViewControllerReopenDrawerToFullPosition(controller: HNDrawerViewController) {
         showNavigationDrawer()
+    }
+    
+    
+    
+    // Status Bar
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     

@@ -17,10 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGradient" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-0t-I51">
-                    <rect key="frame" x="0.0" y="234" width="600" height="366"/>
+                    <rect key="frame" x="0.0" y="214" width="600" height="386"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ool-LT-QwJ">
-                    <rect key="frame" x="0.0" y="234" width="600" height="366"/>
+                    <rect key="frame" x="0.0" y="214" width="600" height="386"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Eaj-Ed-rAw">
                         <size key="itemSize" width="50" height="50"/>
@@ -30,13 +30,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I1q-Pt-BhU" customClass="FVBannerView">
-                    <rect key="frame" x="0.0" y="64" width="600" height="170"/>
+                    <rect key="frame" x="0.0" y="64" width="600" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="170" id="gpi-2b-0JT"/>
+                        <constraint firstAttribute="height" constant="150" id="gpi-2b-0JT"/>
                     </constraints>
                 </scrollView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.28318449340000001" blue="0.5969065657" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="SSJ-0t-I51" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Ka-2r-8NZ"/>
                 <constraint firstAttribute="trailing" secondItem="SSJ-0t-I51" secondAttribute="trailing" id="4Az-zm-AU3"/>

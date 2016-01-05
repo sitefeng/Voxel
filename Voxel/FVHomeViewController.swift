@@ -39,12 +39,6 @@ class FVHomeViewController: HNAbstractViewController, UICollectionViewDataSource
         self.collectionView.collectionViewLayout = flowLayout
         self.collectionView.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
-    }
-    
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
         // Setup for Banner
         var imgArray: [UIImage] = []
         for i in 0..<numPaintings {
@@ -55,7 +49,8 @@ class FVHomeViewController: HNAbstractViewController, UICollectionViewDataSource
         
         let traditionalArray = imgArray as NSArray
         let mutableArray = NSMutableArray(array: traditionalArray)
-        self.bannerView.setupBannerWithImageArray(mutableArray)
+        let bannerFrame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 150)
+        self.bannerView.setupBannerWithImageArray(mutableArray, frame: bannerFrame)
         
         
         // Calculate collection view cell width
@@ -63,6 +58,8 @@ class FVHomeViewController: HNAbstractViewController, UICollectionViewDataSource
         cellWidth = (collectionViewWidth - cellMargin * (numCellCols) - 24) / numCellCols
         self.collectionView.reloadData()
     }
+    
+    
     
     
     // MARK: UICollectionView DataSource

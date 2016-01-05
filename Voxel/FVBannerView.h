@@ -18,6 +18,6 @@
 @property (nonatomic, strong, readonly) NSMutableArray* bannerArray;
 
 
-- (void)setupBannerWithImageArray:(NSMutableArray *)imgArray;
+- (void)setupBannerWithImageArray:(NSMutableArray *)imgArray frame:(CGRect)frame;
 
 @end

@@ -75,9 +75,7 @@
 
 
 
-- (void)setupBannerWithImageArray:(NSMutableArray *)imgArray {
-    
-    CGRect frame = self.frame;
+- (void)setupBannerWithImageArray:(NSMutableArray *)imgArray frame:(CGRect)frame {
     
     if (imgArray != _imgArray) {
         _imgArray = imgArray;

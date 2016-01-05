@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */; };
+		AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */; };
+		AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */; };
 		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
 		AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B051C2C9D8C00DB156C /* ViewController.swift */; };
 		AA6F5B091C2C9D8C00DB156C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B071C2C9D8C00DB156C /* Main.storyboard */; };
@@ -45,6 +48,10 @@
 		AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B851C2D30D800DB156C /* FVMainCollectionViewCell.swift */; };
 		AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */; };
 		AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B941C2E024200DB156C /* FVBannerView.m */; };
+		AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */; };
+		AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */; };
+		AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */; };
+		AAD596581C35A42E006A92B7 /* FVSettingsTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */; };
 		D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C5C0D167A1469FA1EDC99D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +75,9 @@
 /* Begin PBXFileReference section */
 		5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		83C5C0D167A1469FA1EDC99D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVNavigationController.swift; sourceTree = "<group>"; };
+		AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVBrushPaletteViewController.swift; sourceTree = "<group>"; };
+		AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVBrushPaletteViewController.xib; sourceTree = "<group>"; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +124,10 @@
 		AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA6F5B931C2E024200DB156C /* FVBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBannerView.h; sourceTree = "<group>"; };
 		AA6F5B941C2E024200DB156C /* FVBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBannerView.m; sourceTree = "<group>"; };
+		AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableHeader.swift; sourceTree = "<group>"; };
+		AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsTableHeader.xib; sourceTree = "<group>"; };
 		F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA22E8A01C3A5DE50030CC83 /* Reusable Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */,
+			);
+			name = "Reusable Controllers";
+			sourceTree = "<group>";
+		};
 		AA6F5AF71C2C9D8C00DB156C = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +195,7 @@
 				AA6F5B071C2C9D8C00DB156C /* Main.storyboard */,
 				AA6F5B471C2CAF8800DB156C /* Convenience */,
 				AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */,
+				AA22E8A01C3A5DE50030CC83 /* Reusable Controllers */,
 				AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */,
 				AA6F5B461C2CAF7800DB156C /* Navigation Drawer */,
 				AA6F5B541C2D05B600DB156C /* View Controllers */,
@@ -235,6 +258,10 @@
 				AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */,
 				AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */,
 				AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */,
+				AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */,
+				AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */,
+				AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */,
+				AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */,
 				AA6F5B791C2D162100DB156C /* Voxel-Bridging-Header.h */,
 			);
 			name = "View Controllers";
@@ -249,6 +276,8 @@
 				AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */,
 				AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */,
 				AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */,
+				AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */,
+				AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */,
 			);
 			name = "My Pattern";
 			sourceTree = "<group>";
@@ -413,6 +442,9 @@
 				AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */,
 				AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */,
 				AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */,
+				AAD596581C35A42E006A92B7 /* FVSettingsTableHeader.xib in Resources */,
+				AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */,
+				AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */,
 				AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */,
 				AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */,
 				AA6F5B091C2C9D8C00DB156C /* Main.storyboard in Resources */,
@@ -489,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */,
+				AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */,
 				AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */,
 				AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */,
 				AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */,
@@ -500,7 +533,10 @@
 				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
 				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
 				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
+				AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */,
 				AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */,
+				AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */,
+				AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */,
 				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,
 				AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */,
 				AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */,

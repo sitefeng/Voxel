@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVMyPatternViewController" customModule="Voxel" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="MgG-E1-S6S" id="0x0-Y7-HXe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +14,37 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGradient" translatesAutoresizingMaskIntoConstraints="NO" id="od6-El-tWi">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-E1-S6S">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SMw-b3-Lme">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="od6-El-tWi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="2hL-su-uAu"/>
+                <constraint firstItem="MgG-E1-S6S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="47B-Qd-DXI"/>
+                <constraint firstItem="od6-El-tWi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FY7-z2-7Fi"/>
+                <constraint firstItem="MgG-E1-S6S" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="P2x-AT-pmQ"/>
+                <constraint firstAttribute="trailing" secondItem="MgG-E1-S6S" secondAttribute="trailing" id="eE7-Kc-1gx"/>
+                <constraint firstAttribute="bottom" secondItem="MgG-E1-S6S" secondAttribute="bottom" id="pTt-v7-KVB"/>
+                <constraint firstAttribute="bottom" secondItem="od6-El-tWi" secondAttribute="bottom" id="rGL-MQ-KGE"/>
+                <constraint firstAttribute="trailing" secondItem="od6-El-tWi" secondAttribute="trailing" id="spN-Pc-zB3"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="96" y="186"/>
         </view>
     </objects>
+    <resources>
+        <image name="mainGradient" width="2" height="1920"/>
+    </resources>
 </document>

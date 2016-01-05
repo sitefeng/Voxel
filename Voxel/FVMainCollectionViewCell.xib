@@ -13,8 +13,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="214" height="246"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solidColor" translatesAutoresizingMaskIntoConstraints="NO" id="xuw-NO-wH6">
-                        <rect key="frame" x="0.0" y="0.0" width="214" height="214"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solidColor" translatesAutoresizingMaskIntoConstraints="NO" id="xuw-NO-wH6">
+                        <rect key="frame" x="20" y="20" width="174" height="174"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="xuw-NO-wH6" secondAttribute="height" multiplier="1:1" id="2Mg-KE-BgL"/>
                         </constraints>
@@ -30,10 +30,10 @@
             </view>
             <color key="backgroundColor" red="0.090196078430000007" green="0.3411764706" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="xuw-NO-wH6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1dA-vg-nl5"/>
+                <constraint firstItem="xuw-NO-wH6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="1dA-vg-nl5"/>
                 <constraint firstAttribute="bottom" secondItem="0Oj-Xo-6MB" secondAttribute="bottom" constant="8" id="LtH-Ql-0Uz"/>
-                <constraint firstItem="xuw-NO-wH6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Pgg-KU-DYt"/>
-                <constraint firstAttribute="trailing" secondItem="xuw-NO-wH6" secondAttribute="trailing" id="Spb-f2-yDk"/>
+                <constraint firstItem="xuw-NO-wH6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Pgg-KU-DYt"/>
+                <constraint firstAttribute="trailing" secondItem="xuw-NO-wH6" secondAttribute="trailing" constant="20" id="Spb-f2-yDk"/>
                 <constraint firstItem="0Oj-Xo-6MB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ZcI-kg-p96"/>
                 <constraint firstAttribute="trailing" secondItem="0Oj-Xo-6MB" secondAttribute="trailing" constant="8" id="vOq-JA-6C1"/>
             </constraints>
