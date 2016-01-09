@@ -10,9 +10,18 @@
 		AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */; };
 		AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */; };
 		AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */; };
+		AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */; };
+		AA22E8A81C4191200030CC83 /* FVSolidColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */; };
+		AA22E8AB1C4191A00030CC83 /* FVSetLEDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */; };
+		AA22E8AC1C4191A00030CC83 /* FVSetLEDsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */; };
+		AA22E8B71C41B64B0030CC83 /* FVVoxelPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */; };
+		AA22E8B81C41B64B0030CC83 /* FVVoxelPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */; };
+		AA22E8BB1C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */; };
+		AA22E8BC1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */; };
+		AA22E8BF1C41B7260030CC83 /* FVSetLEDsColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */; };
+		AA22E8C01C41B7260030CC83 /* FVSetLEDsColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */; };
 		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
 		AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B051C2C9D8C00DB156C /* ViewController.swift */; };
-		AA6F5B091C2C9D8C00DB156C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B071C2C9D8C00DB156C /* Main.storyboard */; };
 		AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */; };
 		AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */; };
 		AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */; };
@@ -78,10 +87,19 @@
 		AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVNavigationController.swift; sourceTree = "<group>"; };
 		AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVBrushPaletteViewController.swift; sourceTree = "<group>"; };
 		AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVBrushPaletteViewController.xib; sourceTree = "<group>"; };
+		AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSolidColorViewController.swift; sourceTree = "<group>"; };
+		AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSolidColorViewController.xib; sourceTree = "<group>"; };
+		AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsViewController.swift; sourceTree = "<group>"; };
+		AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsViewController.xib; sourceTree = "<group>"; };
+		AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVVoxelPreviewViewController.swift; sourceTree = "<group>"; };
+		AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVVoxelPreviewViewController.xib; sourceTree = "<group>"; };
+		AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsModuleViewController.swift; sourceTree = "<group>"; };
+		AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsModuleViewController.xib; sourceTree = "<group>"; };
+		AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsColorViewController.swift; sourceTree = "<group>"; };
+		AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsColorViewController.xib; sourceTree = "<group>"; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA6F5B081C2C9D8C00DB156C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA6F5B0B1C2C9D8C00DB156C /* Voxel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Voxel.xcdatamodel; sourceTree = "<group>"; };
 		AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA6F5B101C2C9D8C00DB156C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -192,7 +210,6 @@
 			children = (
 				AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */,
 				AA6F5B051C2C9D8C00DB156C /* ViewController.swift */,
-				AA6F5B071C2C9D8C00DB156C /* Main.storyboard */,
 				AA6F5B471C2CAF8800DB156C /* Convenience */,
 				AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */,
 				AA22E8A01C3A5DE50030CC83 /* Reusable Controllers */,
@@ -272,6 +289,16 @@
 			children = (
 				AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */,
 				AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */,
+				AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */,
+				AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */,
+				AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */,
+				AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */,
+				AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */,
+				AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */,
+				AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */,
+				AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */,
+				AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */,
+				AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */,
 				AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */,
 				AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */,
 				AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */,
@@ -433,12 +460,17 @@
 				AA6F5B6A1C2D06A800DB156C /* FVCustomDrawViewController.xib in Resources */,
 				AA6F5B841C2D16F700DB156C /* FVCameraViewController.xib in Resources */,
 				AA6F5B781C2D15D400DB156C /* FVPreloadedImagesViewController.xib in Resources */,
+				AA22E8AC1C4191A00030CC83 /* FVSetLEDsViewController.xib in Resources */,
 				AA6F5B451C2CAF6C00DB156C /* HNDrawerButton.xib in Resources */,
+				AA22E8C01C41B7260030CC83 /* FVSetLEDsColorViewController.xib in Resources */,
 				AA6F5B6E1C2D06B500DB156C /* FVSettingsViewController.xib in Resources */,
+				AA22E8A81C4191200030CC83 /* FVSolidColorViewController.xib in Resources */,
 				AA6F5B5A1C2D061900DB156C /* FVHomeViewController.xib in Resources */,
 				AA6F5B721C2D152A00DB156C /* FVMyPatternViewController.xib in Resources */,
 				AA6F5B661C2D065300DB156C /* FVLoadImageViewController.xib in Resources */,
 				AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */,
+				AA22E8B81C41B64B0030CC83 /* FVVoxelPreviewViewController.xib in Resources */,
+				AA22E8BC1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib in Resources */,
 				AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */,
 				AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */,
 				AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */,
@@ -447,7 +479,6 @@
 				AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */,
 				AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */,
 				AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */,
-				AA6F5B091C2C9D8C00DB156C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,13 +553,16 @@
 			files = (
 				AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */,
 				AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */,
+				AA22E8B71C41B64B0030CC83 /* FVVoxelPreviewViewController.swift in Sources */,
 				AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */,
 				AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */,
 				AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */,
 				AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */,
 				AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */,
 				AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */,
+				AA22E8BB1C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift in Sources */,
 				AA6F5B6D1C2D06B500DB156C /* FVSettingsViewController.swift in Sources */,
+				AA22E8BF1C41B7260030CC83 /* FVSetLEDsColorViewController.swift in Sources */,
 				AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */,
 				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
 				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
@@ -538,8 +572,10 @@
 				AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */,
 				AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */,
 				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,
+				AA22E8AB1C4191A00030CC83 /* FVSetLEDsViewController.swift in Sources */,
 				AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */,
 				AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */,
+				AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */,
 				AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */,
 				AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */,
 				AA6F5B3D1C2CAF5A00DB156C /* HNString.swift in Sources */,
@@ -580,14 +616,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AA6F5B071C2C9D8C00DB156C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA6F5B081C2C9D8C00DB156C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

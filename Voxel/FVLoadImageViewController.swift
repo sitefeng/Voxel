@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+// TODO: changed the default image pick to a cusmtom one, so user can pick images in sequence
 class FVLoadImageViewController: HNAbstractViewController {
 
     override func viewDidLoad() {
@@ -16,20 +18,6 @@ class FVLoadImageViewController: HNAbstractViewController {
         self.title = "Load Media"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

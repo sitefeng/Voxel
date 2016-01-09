@@ -18,6 +18,7 @@
                 <outlet property="trashButton" destination="Z3R-Sd-mq8" id="uxa-BC-fN7"/>
                 <outlet property="undoButton" destination="ozT-ej-mt9" id="Bb5-am-Oh8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="zoomFactorLabel" destination="KBC-lq-XIT" id="dr6-CG-BSW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -139,9 +140,19 @@
                     </constraints>
                     <state key="normal" image="save"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r8c-Cq-5EK">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r8c-Cq-5EK">
                     <rect key="frame" x="232" y="8" width="80" height="80"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.5x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBC-lq-XIT">
+                    <rect key="frame" x="282" y="70" width="30" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="b80-2l-V9D"/>
+                        <constraint firstAttribute="width" constant="30" id="rzq-Qw-5dJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.0" green="0.28318449340000001" blue="0.5969065657" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -168,6 +179,7 @@
                 <constraint firstItem="j3W-8a-4po" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="ShG-iH-9dr"/>
                 <constraint firstItem="WcG-kv-8ox" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TEz-j0-FHD"/>
                 <constraint firstItem="hfg-B8-0y1" firstAttribute="trailing" secondItem="Tue-yM-AvW" secondAttribute="trailing" id="Uzg-Os-iko"/>
+                <constraint firstItem="KBC-lq-XIT" firstAttribute="trailing" secondItem="r8c-Cq-5EK" secondAttribute="trailing" id="Xja-CF-HdE"/>
                 <constraint firstItem="ozT-ej-mt9" firstAttribute="top" secondItem="r8c-Cq-5EK" secondAttribute="bottom" constant="16" id="azs-jq-6Hs"/>
                 <constraint firstItem="Tue-yM-AvW" firstAttribute="trailing" secondItem="aS0-J9-wyo" secondAttribute="trailing" id="bPf-Jp-uKg"/>
                 <constraint firstItem="YcW-o9-gH7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="c6S-qU-63S"/>
@@ -182,6 +194,7 @@
                 <constraint firstItem="r8c-Cq-5EK" firstAttribute="centerX" secondItem="dsn-aq-8bG" secondAttribute="centerX" id="hlh-o2-Eq7"/>
                 <constraint firstItem="hMq-Wd-LJ2" firstAttribute="top" secondItem="y8J-vP-jJo" secondAttribute="bottom" constant="8" id="kop-Mc-d2Q"/>
                 <constraint firstItem="aS0-J9-wyo" firstAttribute="trailing" secondItem="YcW-o9-gH7" secondAttribute="trailing" id="stb-fe-oVT"/>
+                <constraint firstItem="KBC-lq-XIT" firstAttribute="bottom" secondItem="r8c-Cq-5EK" secondAttribute="bottom" id="tzo-pu-qcE"/>
                 <constraint firstItem="hfg-B8-0y1" firstAttribute="top" secondItem="Tue-yM-AvW" secondAttribute="bottom" constant="17" id="vGN-BH-zaO"/>
                 <constraint firstItem="y8J-vP-jJo" firstAttribute="top" secondItem="j3W-8a-4po" secondAttribute="bottom" constant="24" id="vWJ-x6-ri6"/>
                 <constraint firstItem="Tue-yM-AvW" firstAttribute="top" secondItem="aS0-J9-wyo" secondAttribute="bottom" constant="17" id="xfw-3Z-vDK"/>

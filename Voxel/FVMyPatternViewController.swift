@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -79,7 +79,11 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
    
             
         case 2: // Load Media
-            let preloadedPatternVC = FVPreloadedPatternViewController(nibName: "FVPreloadedPatternViewController", bundle: NSBundle.mainBundle())
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imagePicker, animated: true, completion: nil)
      
             
         case 3: // 2D Draw

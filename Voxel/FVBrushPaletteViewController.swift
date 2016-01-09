@@ -8,7 +8,27 @@
 
 import UIKit
 
-class FVBrushPaletteViewController: UIViewController {
+protocol FVBrushPaletteProtocolForCanvas {
+    
+    func brushPalette(palette: FVBrushPaletteViewController, changeBrushSizeTo brushDiameter: CGFloat)
+    
+    func brushPalette(palette: FVBrushPaletteViewController, changeBrushColorTo brushColor: CGColorRef)
+    
+    func brushPalette(palette: FVBrushPaletteViewController, changeBrushTypeTo brushType: FVBrushTypes)
+    
+    func brushPaletteUndoCanvas(palette: FVBrushPaletteViewController)
+    func brushPaletteRedoCanvas(palette: FVBrushPaletteViewController)
+    func brushPaletteClearCanvas(palette: FVBrushPaletteViewController)
+    func brushPaletteSaveCanvas(palette: FVBrushPaletteViewController)
+}
+
+
+// Enum
+public enum FVBrushTypes: Int {
+    case round, square, rectangularFlat, rectangularThin
+}
+
+class FVBrushPaletteViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var dragBarView: UIView!
     
@@ -25,11 +45,7 @@ class FVBrushPaletteViewController: UIViewController {
     @IBOutlet weak var trashButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
-    // Enum
-    enum FVBrushTypes {
-        case round, square, rectangularFlat
-    }
-    
+    @IBOutlet weak var zoomFactorLabel: UILabel!
 
     // Constants
     let paletteFullHeight = CGFloat(191)
@@ -38,9 +54,11 @@ class FVBrushPaletteViewController: UIViewController {
     let maxBrushDiameter = CGFloat(40)
     let minBrushDiameter = CGFloat(3)
     
-    let previewZoomFactor = CGFloat(1.5)
+    let previewZoomFactor = CGFloat(1.3)
     
     // Public Variables
+    var delegate: FVBrushPaletteProtocolForCanvas?
+    
     var redComp = CGFloat(1)
     var greenComp = CGFloat(1)
     var blueComp = CGFloat(1)
@@ -69,6 +87,10 @@ class FVBrushPaletteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO ReMOVE
+        self.undoButton.hidden = true
+        self.redoButton.hidden = true
+        
         self.dragBarView.backgroundColor = UIColor(colorType: HNColorTypes.SecondaryBGColor)
         dragBarView.layer.cornerRadius = CGFloat(2.5)
         dragBarView.layer.masksToBounds = true
@@ -78,9 +100,17 @@ class FVBrushPaletteViewController: UIViewController {
         self.checkerBoardView.layer.cornerRadius = 5
         self.checkerBoardView.layer.masksToBounds = true
         
+        self.zoomFactorLabel.text = "\(previewZoomFactor)x"
+        
+        // Adding Gesture Recognizers
         let panRec = UIPanGestureRecognizer(target: self, action: "panRecognized:")
+        panRec.delegate = self
         self.view.addGestureRecognizer(panRec)
-
+        
+        let tapRec = UITapGestureRecognizer(target: self, action: "brushPreviewTapped:")
+        tapRec.delegate = self
+        self.brushPreview.addGestureRecognizer(tapRec)
+        
         
         // Adding targets of UI Elements
         sizeSlider.addTarget(self, action: "sliderChanged:", forControlEvents: UIControlEvents.ValueChanged)
@@ -118,35 +148,56 @@ class FVBrushPaletteViewController: UIViewController {
             let normalizedDiameter = minBrushDiameter + CGFloat(slider.value) * (maxBrushDiameter - minBrushDiameter)
             
             brushDiameter = normalizedDiameter
+            self.delegate?.brushPalette(self, changeBrushSizeTo: brushDiameter)
             
         } else if slider == redSlider {
             redComp = CGFloat(slider.value)
+            self.delegate?.brushPalette(self, changeBrushColorTo: brushColor)
             
         } else if slider == greenSlider {
             greenComp = CGFloat(slider.value)
+            self.delegate?.brushPalette(self, changeBrushColorTo: brushColor)
         } else if slider == blueSlider {
             blueComp = CGFloat(slider.value)
+            self.delegate?.brushPalette(self, changeBrushColorTo: brushColor)
         }
         
         rerenderPreview()
+        
     }
     
     // MARK: Button Callbacks
     
     func undoButtonPressed() {
-        print("pressed")
+        self.delegate?.brushPaletteUndoCanvas(self)
     }
     
     func redoButtonPressed() {
-        
+        self.delegate?.brushPaletteRedoCanvas(self)
     }
     
     func trashButtonPressed() {
-        
+        self.delegate?.brushPaletteClearCanvas(self)
     }
     
     func saveButtonPressed() {
+        self.delegate?.brushPaletteSaveCanvas(self)
+    }
+    
+    
+    func brushPreviewTapped(rec: UITapGestureRecognizer) {
         
+        if rec.state == UIGestureRecognizerState.Ended {
+            
+            if brushType.rawValue == FVBrushTypes.rectangularThin.rawValue {
+                brushType = FVBrushTypes.round
+            } else {
+                brushType = FVBrushTypes(rawValue: brushType.rawValue + 1)!
+            }
+            
+            self.delegate?.brushPalette(self, changeBrushTypeTo: brushType)
+            self.rerenderPreview()
+        }
     }
     
     
@@ -218,11 +269,17 @@ class FVBrushPaletteViewController: UIViewController {
         switch brushType {
             case .round:
                 drawRoundBrush()
-            default:
-                drawRoundBrush()
+            case .square:
+                drawRectangularBrush(1)
+            case .rectangularFlat:
+                drawRectangularBrush(2)
+            case .rectangularThin:
+                drawRectangularBrush(0.5)
+          
         }
         
     }
+    
     
     func drawRoundBrush() {
         
@@ -243,6 +300,37 @@ class FVBrushPaletteViewController: UIViewController {
         UIGraphicsEndImageContext()
     }
     
+    
+    func drawRectangularBrush(verticalSqueezeFactor: CGFloat) {
+        
+        let zoomedBushWidth = brushDiameter * previewZoomFactor * verticalSqueezeFactor
+        let zoomedBushHeight = brushDiameter * previewZoomFactor / verticalSqueezeFactor
+        
+        let rect = brushPreview.frame
+        let pt = CGPoint(x: brushPreview.frame.size.width/2, y: brushPreview.frame.size.height/2)
+        
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        let brushRect = CGRect(x: pt.x - zoomedBushWidth/2, y: pt.y - zoomedBushHeight/2, width: zoomedBushWidth, height: zoomedBushHeight)
+        
+        CGContextSetFillColorWithColor(context, brushColor)
+        CGContextFillRect(context, brushRect)
+        
+        brushPreview.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer.isKindOfClass(UITapGestureRecognizer.self) ||
+            otherGestureRecognizer.isKindOfClass(UITapGestureRecognizer.self) {
+                return true
+        } else {
+            return false
+        }
+    }
     
     
     
