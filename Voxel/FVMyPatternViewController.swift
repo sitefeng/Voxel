@@ -22,7 +22,7 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         self.title = "My Patterns"
         
         let layout = UICollectionViewFlowLayout()

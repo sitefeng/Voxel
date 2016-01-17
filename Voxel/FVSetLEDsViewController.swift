@@ -10,10 +10,21 @@ import UIKit
 
 class FVSetLEDsViewController: UIViewController {
 
+    @IBOutlet weak var voxelPreview: UIView!
+    @IBOutlet weak var setLEDsModuleView: UIView!
+    @IBOutlet weak var setLEDsColorView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let voxelPreview = FVVoxelPreviewViewController(nibName: "FVVoxelPreviewViewController", bundle: NSBundle.mainBundle())
+        
+        self.addChildViewController(voxelPreview)
+        voxelPreview.view.frame = self.voxelPreview.bounds
+        voxelPreview.willMoveToParentViewController(self)
+        
+        
+        
     }
 
     
