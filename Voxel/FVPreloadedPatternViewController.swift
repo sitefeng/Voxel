@@ -14,7 +14,7 @@ class FVPreloadedPatternViewController: HNAbstractViewController, UICollectionVi
     
     let kCollectionViewCellReuseIdentifier = "kCollectionViewCellReuseIdentifier"
     
-    let cellTitles = ["Voxel Images", "Light Patterns", "Sound Visualizer", "3D Models"]
+    let cellTitles = ["Voxel Images", "Light Patterns", "Sound Visualizer", "Request New Feature"]
     let cellImageNames = ["preloadedImages", "lightPatterns", "soundVisualizer", "3DModel"]
     
     var cellWidth: CGFloat = 0

@@ -28,6 +28,7 @@
 		AA22E8EF1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */; };
 		AA22E8F11C4C328B0030CC83 /* FVWirelessImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */; };
 		AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */; };
+		AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */; };
 		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
 		AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B051C2C9D8C00DB156C /* ViewController.swift */; };
 		AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */; };
@@ -113,6 +114,7 @@
 		AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessChangeSettingsMessage.swift; sourceTree = "<group>"; };
 		AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageMessage.swift; sourceTree = "<group>"; };
 		AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageSeriesMessage.swift; sourceTree = "<group>"; };
+		AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPatternAbstractViewController.swift; sourceTree = "<group>"; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		AA6F5B541C2D05B600DB156C /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */,
 				AA6F5B961C2E024800DB156C /* Home */,
 				AA6F5B731C2D159300DB156C /* My Pattern */,
 				AA6F5B741C2D15C000DB156C /* Preloaded Pattern */,
@@ -612,6 +615,7 @@
 				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
 				AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */,
 				AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */,
+				AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */,
 				AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */,
 				AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */,
 				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,

@@ -36,7 +36,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="170" id="4zD-nj-9Bk"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="kG5-iZ-cZL"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="kG5-iZ-cZL"/>
                     </constraints>
                 </view>
             </subviews>

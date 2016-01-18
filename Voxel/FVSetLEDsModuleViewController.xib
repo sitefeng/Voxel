@@ -6,6 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVSetLEDsModuleViewController" customModule="Voxel" customModuleProvider="target">
             <connections>
+                <outlet property="moduleLabel" destination="UtF-gx-Loe" id="Qwr-Fb-XeN"/>
+                <outlet property="scrollView" destination="hE2-Vs-9S6" id="m7C-YC-dos"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

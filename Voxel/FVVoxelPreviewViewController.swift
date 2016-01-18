@@ -57,7 +57,7 @@ class FVVoxelPreviewViewController: UIViewController {
         imageView.frame = CGRect(x: margin, y: margin, width: width, height: 35)
         imageView.alpha = 0.5
         self.view.addSubview(imageView)
-        
+        self.moduleSelectionView = imageView
 
         switch(voxel.configuration) {
             

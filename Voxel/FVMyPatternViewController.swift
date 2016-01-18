@@ -75,8 +75,9 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
   
             
         case 1: // Set LEDs
-            let myPatternVC = FVMyPatternViewController(nibName: "FVMyPatternViewController", bundle: NSBundle.mainBundle())
-   
+            let setLEDsVC = FVSetLEDsViewController(nibName: "FVSetLEDsViewController", bundle: nil)
+            let navController = FVNavigationController(rootViewController: setLEDsVC)
+            self.presentViewController(navController, animated: true, completion: nil)
             
         case 2: // Load Media
             
