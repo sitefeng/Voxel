@@ -114,10 +114,17 @@ class FVSetLEDsViewController: FVPatternAbstractViewController, FVVoxelPreviewVi
     }
     
     
-    // Set LEDs Module Delegate
+    // MARK: Set LEDs Module Delegate
     func setLEDsModuleViewController(controller: FVSetLEDsModuleViewController, newColorArray: [UIColor]) {
         self.voxelPreviewVC.setLEDsColorsForCurrentModule(newColorArray)
         
     }
 
+    
+    // MARK: Send Data To Hardware
+    override func sendButtonPressed() {
+        let combinedArray = self.voxelPreviewVC.combinedColorArray()
+        print(combinedArray)
+    }
+    
 }
