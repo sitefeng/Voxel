@@ -18,19 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="388" height="175"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voxelHandle2" translatesAutoresizingMaskIntoConstraints="NO" id="Mn0-CI-N8S">
-                    <rect key="frame" x="176" y="45" width="37" height="130"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voxelHandle3" translatesAutoresizingMaskIntoConstraints="NO" id="Mn0-CI-N8S">
+                    <rect key="frame" x="176" y="47" width="37" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="37" id="yum-k9-DVl"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xef-Au-var">
-                    <rect key="frame" x="8" y="40" width="372" height="5"/>
-                    <color key="backgroundColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="5" id="iU6-mz-wIJ"/>
-                    </constraints>
-                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bNt-sr-0EK">
                     <rect key="frame" x="8" y="87" width="80" height="80"/>
                     <constraints>
@@ -58,27 +51,31 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="e9x-Io-Cnb"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voxelLEDModule" translatesAutoresizingMaskIntoConstraints="NO" id="r9j-hy-74p">
+                    <rect key="frame" x="0.0" y="39" width="388" height="8"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="FR1-7N-gaq"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="xef-Au-var" firstAttribute="top" secondItem="wEc-TO-I4Z" secondAttribute="bottom" id="2gO-kk-DKT"/>
                 <constraint firstItem="Mn0-CI-N8S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3ez-BA-oWA"/>
-                <constraint firstItem="xef-Au-var" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="6yj-mz-8kD"/>
-                <constraint firstItem="Mn0-CI-N8S" firstAttribute="top" secondItem="xef-Au-var" secondAttribute="bottom" id="7Hm-jG-jJy"/>
                 <constraint firstAttribute="bottom" secondItem="Mn0-CI-N8S" secondAttribute="bottom" id="Be7-pk-qfx"/>
                 <constraint firstItem="7Q8-B2-zrn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="FNy-CU-D2X"/>
                 <constraint firstAttribute="bottom" secondItem="AoV-Kz-FTR" secondAttribute="bottom" constant="8" id="Lsv-hE-Tnv"/>
-                <constraint firstAttribute="trailing" secondItem="xef-Au-var" secondAttribute="trailing" constant="8" id="OJU-89-60I"/>
                 <constraint firstAttribute="trailing" secondItem="AoV-Kz-FTR" secondAttribute="trailing" constant="8" id="PUD-q0-hj5"/>
+                <constraint firstItem="r9j-hy-74p" firstAttribute="top" secondItem="wEc-TO-I4Z" secondAttribute="bottom" constant="-1" id="Qge-ks-Xha"/>
                 <constraint firstItem="wEc-TO-I4Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="YNP-rf-HzR"/>
+                <constraint firstItem="Mn0-CI-N8S" firstAttribute="top" secondItem="r9j-hy-74p" secondAttribute="bottom" id="aoc-a8-86G"/>
                 <constraint firstItem="wEc-TO-I4Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="csd-Wz-75M"/>
                 <constraint firstAttribute="trailing" secondItem="7Q8-B2-zrn" secondAttribute="trailing" constant="8" id="eqF-F5-Iy6"/>
                 <constraint firstItem="bNt-sr-0EK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="g80-aT-CFo"/>
+                <constraint firstAttribute="trailing" secondItem="r9j-hy-74p" secondAttribute="trailing" id="jQe-rq-tNv"/>
                 <constraint firstItem="7Q8-B2-zrn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lcF-7y-6SK"/>
-                <constraint firstItem="xef-Au-var" firstAttribute="top" secondItem="7Q8-B2-zrn" secondAttribute="bottom" id="oDa-cX-dAr"/>
                 <constraint firstAttribute="bottom" secondItem="bNt-sr-0EK" secondAttribute="bottom" constant="8" id="pVe-NC-ejK"/>
-                <constraint firstItem="xef-Au-var" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="pd3-lD-fe1"/>
                 <constraint firstAttribute="trailing" secondItem="wEc-TO-I4Z" secondAttribute="trailing" constant="8" id="xvs-If-ZNj"/>
+                <constraint firstItem="r9j-hy-74p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y4S-qu-coi"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
@@ -87,6 +84,7 @@
         </view>
     </objects>
     <resources>
-        <image name="voxelHandle2" width="658" height="1800"/>
+        <image name="voxelHandle3" width="21" height="70"/>
+        <image name="voxelLEDModule" width="418" height="13"/>
     </resources>
 </document>

@@ -13,18 +13,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="364" height="163"/>
+            <rect key="frame" x="0.0" y="0.0" width="364" height="153"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hE2-Vs-9S6">
-                    <rect key="frame" x="0.0" y="0.0" width="364" height="163"/>
+                    <rect key="frame" x="0.0" y="0.0" width="364" height="153"/>
                 </scrollView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="borderSetLEDsModule" translatesAutoresizingMaskIntoConstraints="NO" id="krx-zL-2aq">
-                    <rect key="frame" x="0.0" y="0.0" width="364" height="163"/>
+                    <rect key="frame" x="0.0" y="0.0" width="364" height="153"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtF-gx-Loe">
-                    <rect key="frame" x="269" y="123" width="75" height="20"/>
+                    <rect key="frame" x="277" y="113" width="75" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="gOH-pO-u6f"/>
                         <constraint firstAttribute="width" constant="75" id="hFB-vK-lBS"/>
@@ -38,7 +38,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hE2-Vs-9S6" secondAttribute="trailing" id="6VV-sq-Ad3"/>
                 <constraint firstAttribute="bottom" secondItem="krx-zL-2aq" secondAttribute="bottom" id="EBd-4l-c8z"/>
-                <constraint firstAttribute="trailing" secondItem="UtF-gx-Loe" secondAttribute="trailing" constant="20" id="J8j-s4-29u"/>
+                <constraint firstAttribute="trailing" secondItem="UtF-gx-Loe" secondAttribute="trailing" constant="12" id="J8j-s4-29u"/>
                 <constraint firstItem="hE2-Vs-9S6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lo7-Kp-A1c"/>
                 <constraint firstAttribute="trailing" secondItem="krx-zL-2aq" secondAttribute="trailing" id="MyC-PC-ivJ"/>
                 <constraint firstAttribute="bottom" secondItem="hE2-Vs-9S6" secondAttribute="bottom" id="NVx-z5-uhx"/>
@@ -49,7 +49,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="158" y="271.5"/>
+            <point key="canvasLocation" x="235" y="95.5"/>
         </view>
     </objects>
     <resources>
