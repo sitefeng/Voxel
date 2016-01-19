@@ -102,6 +102,8 @@ class FVSetLEDsViewController: FVPatternAbstractViewController, FVVoxelPreviewVi
         }
         
         self.voxelPreviewVC.setLEDsColorsForCurrentModule(clearArray)
+        self.voxelPreviewVC.setLEDsColorsForCurrentModule(clearArray)
+        self.voxelPreviewVC.setLEDsColorsForCurrentModule(clearArray)
     }
     
     
