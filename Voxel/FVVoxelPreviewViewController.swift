@@ -8,6 +8,15 @@
 
 import UIKit
 
+
+protocol FVVoxelPreviewViewControllerDelegate {
+    
+    func voxelPreviewController(controller: FVVoxelPreviewViewController, selectedModuleIndex: Int)
+    func numberOfLEDsPerModule() -> Int
+    
+}
+
+
 class FVVoxelPreviewViewController: UIViewController {
 
     // Constants
@@ -21,14 +30,40 @@ class FVVoxelPreviewViewController: UIViewController {
     @IBOutlet weak var ledImageView: UIImageView!
     var moduleSelectionView: UIImageView!
     
+    // Public Var
     var moduleSelectionViewPosition: Int = 0
+    
+    var delegate: FVVoxelPreviewViewControllerDelegate?
+    
+    // Private Var
+    var moduleColors: [[UIColor]]
+    
+    init?(_ coder: NSCoder? = nil) {
+        self.moduleColors = []
+        for _ in 0..<Int(self.maxHorizontalModules) {
+            let colorArray = [UIColor]()
+            
+            self.moduleColors.append(colorArray)
+        }
+        
+        if let coder = coder {
+            super.init(coder: coder)
+        } else {
+            super.init(nibName: nil, bundle:nil)
+        }
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        self.init(coder)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ledImageView.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: "voxelTapped:")
         ledImageView.addGestureRecognizer(tapRecognizer)
-        
         
     }
     
@@ -45,17 +80,34 @@ class FVVoxelPreviewViewController: UIViewController {
         // Setup module selection view
         self.setupModuleSelectionView(voxel)
         
+        self.drawLEDFrame()
+        
+        // Fill in default black color
+        let numLEDsPerModule = self.delegate?.numberOfLEDsPerModule()
+        var ledColors: [UIColor] = []
+        
+        for _ in 0 ..< numLEDsPerModule! {
+            ledColors.append(UIColor.blackColor())
+        }
+        
+        for i in 0 ..< Int(maxHorizontalModules) {
+            self.moduleColors[i] = ledColors
+            self.moduleSelectionViewPosition = i
+            self.drawLEDColors(ledColors)
+        }
+        
+        self.moduleSelectionViewPosition = 0
     }
     
     
     func setupModuleSelectionView(voxel: FVVoxel) {
         
-        let totalWidth = self.ledImageView.bounds.size.width - margin*2
+        let totalWidth = UIScreen.mainScreen().bounds.size.width - margin*2
         let width = totalWidth / maxHorizontalModules
         
         let imageView = UIImageView(image: UIImage(named: "borderLEDModuleSelection"))
         imageView.frame = CGRect(x: margin, y: margin, width: width, height: 35)
-        imageView.alpha = 0.5
+        imageView.alpha = 0.7
         self.view.addSubview(imageView)
         self.moduleSelectionView = imageView
 
@@ -102,8 +154,15 @@ class FVVoxelPreviewViewController: UIViewController {
             
             self.moduleSelectionView.frame = CGRect(x: xPos, y: self.moduleSelectionView.frame.origin.y, width: self.moduleSelectionView.frame.size.width, height: self.moduleSelectionView.frame.size.height)
         }
-        
     }
+    
+    
+    // MARK: Public Methods
+    func setLEDsColorsForCurrentModule(colors: [UIColor]) {
+        self.moduleColors[moduleSelectionViewPosition] = colors
+        self.drawLEDColors(colors)
+    }
+    
     
     // MARK: Callback Methods
     func voxelTapped(rec: UITapGestureRecognizer) {
@@ -113,20 +172,22 @@ class FVVoxelPreviewViewController: UIViewController {
         let moduleIndex = Int( floor((xPos-margin) / width) )
         
         moveModuleSelectionViewToPosition(moduleIndex, animated: true)
+        self.delegate?.voxelPreviewController(self, selectedModuleIndex: moduleIndex)
     }
     
     
     // MARK: Drawing Methods
     
     // Drawing the frame on top of led colors
-    func drawLEDFrame() {
+    private func drawLEDFrame() {
         ledFrameView.image = nil
         
+        let totalWidth = UIScreen.mainScreen().bounds.width - 2*margin
         let width = moduleSelectionView.frame.size.width
         let height = ledImageView.frame.size.height
         let xPos = CGFloat(0)
         
-        UIGraphicsBeginImageContext(CGSize(width: width, height: ledImageView.bounds.height))
+        UIGraphicsBeginImageContext(CGSize(width: totalWidth, height: ledImageView.bounds.height))
         let context = UIGraphicsGetCurrentContext()
         
         let strokeColor = UIColor(colorType: HNColorTypes.SecondaryTextColor)
@@ -144,13 +205,16 @@ class FVVoxelPreviewViewController: UIViewController {
     
     
     // Array of 57 pixels for the currently selected module
-    func drawLEDColors(array: [UIColor]) {
+    private func drawLEDColors(array: [UIColor]) {
         
+        let totalWidth = UIScreen.mainScreen().bounds.width - 2*margin
         let width = moduleSelectionView.frame.size.width
         let height = ledImageView.frame.size.height
         let xPos = CGFloat(moduleSelectionViewPosition) * width
         
-        UIGraphicsBeginImageContext(CGSize(width: width, height: ledImageView.bounds.height))
+        UIGraphicsBeginImageContext(CGSize(width: totalWidth, height: ledImageView.bounds.height))
+        self.ledImageView.image?.drawInRect(self.ledImageView.bounds)
+        
         let context = UIGraphicsGetCurrentContext()
         
         let ledWidth = width / CGFloat(array.count)
@@ -167,6 +231,12 @@ class FVVoxelPreviewViewController: UIViewController {
         ledImageView.image = image
     }
     
+    
+    // For Sending to Hardware
+    internal func combinedColorArray() -> [UIColor] {
+        let colorArray = moduleColors.reduce([], combine: +)
+        return colorArray
+    }
     
     
 

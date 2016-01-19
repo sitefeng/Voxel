@@ -8,12 +8,14 @@
 
 import UIKit
 
+protocol FVSetLEDsModuleViewControllerDelegate {
+    func setLEDsModuleViewController(controller: FVSetLEDsModuleViewController, newColorArray: [UIColor])
+    func numberOfLEDsPerModule() -> Int
+}
+
 // Responsible for only ONE LED module
 class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    // Constants
-    let margin = CGFloat(8)
-
     @IBOutlet private weak var moduleLabel: UILabel!
     @IBOutlet private weak var scrollView: UIScrollView!
     
@@ -21,28 +23,50 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
     var ledFrameView: UIImageView!
     
     var panRec: UIPanGestureRecognizer!
+    var longPressRec: UILongPressGestureRecognizer!
     
     // Public Variables
-    var numberOfLEDs = 57
-    var ledHeight = CGFloat(40)
+    var delegate: FVSetLEDsModuleViewControllerDelegate?
+    
+    var labelTitle: String? {
+        didSet {
+            if self.moduleLabel != nil {
+                self.moduleLabel.text = labelTitle
+            }
+        }
+    }
+    
+    // Constants
+    let margin = CGFloat(34)
+
+    let ledHeight = CGFloat(60)
     var ledWidth: CGFloat {
         get {
             return CGFloat(ledHeight)/4
         }
 
     }
+    
+    // Variables
     var ledColorArray: [UIColor] = []
-    var currBrushColor: UIColor = UIColor.blackColor()
+    var currBrushColor: UIColor = UIColor.whiteColor()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.moduleLabel.text = labelTitle
+        
         // Gesture Recognizer
-        self.panRec = UIPanGestureRecognizer(target: self, action: "drawOnLEDRecognized")
+        self.panRec = UIPanGestureRecognizer(target: self, action: "drawOnLEDRecognized:")
+
+        self.longPressRec = UILongPressGestureRecognizer(target: self, action: "longPressRecognized:")
+        longPressRec.minimumPressDuration = 0.0
+        longPressRec.requireGestureRecognizerToFail(self.panRec)
 
         // Update Variables
-        for i in 0 ..< numberOfLEDs {
+        let numberOfLEDs = self.delegate?.numberOfLEDsPerModule() as Int!
+        for _ in 0 ..< numberOfLEDs {
             self.ledColorArray.append(UIColor.clearColor())
         }
         
@@ -52,6 +76,7 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         self.ledImageView = UIImageView(frame: CGRect(x: margin, y: margin, width: imageViewWidth, height: ledHeight))
         self.ledImageView.userInteractionEnabled = true
         self.ledImageView.addGestureRecognizer(panRec)
+        self.ledImageView.addGestureRecognizer(longPressRec)
         
         self.ledFrameView = UIImageView(frame: self.ledImageView.frame)
         
@@ -59,10 +84,12 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         self.scrollView.addSubview(self.ledImageView)
         self.scrollView.addSubview(self.ledFrameView)
         
+        // Draw LED Frame
+        self.drawLEDFrame(numberOfLEDs)
     }
     
     
-    func drawLEDFrame() {
+    func drawLEDFrame(numberOfLEDs: Int) {
         self.ledFrameView.image = nil
         
         let frameLineWidth = CGFloat(1)
@@ -75,7 +102,7 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         
         var xPos = CGFloat(0)
         
-        for _ in 0 ..< self.numberOfLEDs {
+        for _ in 0 ..< numberOfLEDs {
             CGContextStrokeRectWithWidth(context, CGRect(x: xPos, y: 0, width: ledWidth, height: ledHeight), frameLineWidth)
             
             xPos += ledWidth
@@ -87,7 +114,6 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
     
     var panBeginXPos = CGFloat(0)
     
-    
     func drawOnLEDRecognized(rec: UIPanGestureRecognizer) {
         
         let pt = rec.locationInView(self.ledImageView)
@@ -95,15 +121,14 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         switch(rec.state) {
         case .Began:
             panBeginXPos = pt.x
+            self.drawLEDColorRectForXPos(pt.x)
             
         case .Changed:
+            
             let xTranslation = rec.translationInView(self.ledImageView).x
             let currXPos = panBeginXPos + xTranslation
             
             self.drawLEDColorRectForXPos(currXPos)
-            
-        case .Ended:
-            panBeginXPos = CGFloat(0)
             
         default:
             break
@@ -111,15 +136,26 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
     }
     
     
+    func longPressRecognized(rec: UILongPressGestureRecognizer) {
+        
+        let pt = rec.locationInView(self.ledImageView)
+        
+        if rec.state == UIGestureRecognizerState.Began {
+            self.drawLEDColorRectForXPos(pt.x)
+        }
+    }
+    
     // Updates both the Model and View of this view controller
     func drawLEDColorRectForXPos(xPos: CGFloat) {
+        let colorArrayBefore = self.ledColorArray
         
+        // Drawing on screen
         UIGraphicsBeginImageContext(self.ledImageView.frame.size)
         let context = UIGraphicsGetCurrentContext()
         
         self.ledImageView.image?.drawInRect(self.ledImageView.bounds)
         
-        let ledIndex = floor(xPos / ledWidth)
+        let ledIndex = max( floor(xPos / ledWidth), 0)
         let ledRectXPos = ledIndex * ledWidth
         
         CGContextSetFillColorWithColor(context, self.currBrushColor.CGColor)
@@ -127,22 +163,43 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         self.ledImageView.image = image
+        
+        // For Delegate
+        self.ledColorArray[Int(ledIndex)] = self.currBrushColor
+        if (self.ledColorArray != colorArrayBefore) {
+            self.delegate?.setLEDsModuleViewController(self, newColorArray: self.ledColorArray)
+        }
     }
     
     
     func clearAllLEDs() {
+        ledColorArray = []
+        let numberOfLEDs = self.delegate?.numberOfLEDsPerModule()
+        
+        for _ in 0 ..< numberOfLEDs! {
+            ledColorArray.append(UIColor.blackColor())
+        }
+        
         self.ledImageView.image = nil
     }
     
     
     // MARK: Gesture Recognizer Delegate
+    // TODO: Remove, not in use
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOfGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         
         return (gestureRecognizer == self.panRec)
-    
     }
+
     
-    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if (gestureRecognizer == self.longPressRec && otherGestureRecognizer == self.panRec) ||
+           (gestureRecognizer == self.panRec && otherGestureRecognizer == self.longPressRec) {
+            return true
+        } else {
+            return false
+        }
+    }
 
 
 
