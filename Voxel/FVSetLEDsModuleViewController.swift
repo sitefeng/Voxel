@@ -37,7 +37,7 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
     }
     
     // Constants
-    let margin = CGFloat(34)
+    let margin = CGFloat(27)
 
     let ledHeight = CGFloat(60)
     var ledWidth: CGFloat {

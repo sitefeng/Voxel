@@ -52,7 +52,7 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voxelLEDModule" translatesAutoresizingMaskIntoConstraints="NO" id="r9j-hy-74p">
-                    <rect key="frame" x="0.0" y="39" width="388" height="8"/>
+                    <rect key="frame" x="8" y="39" width="372" height="8"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="8" id="FR1-7N-gaq"/>
                     </constraints>
@@ -71,11 +71,11 @@
                 <constraint firstItem="wEc-TO-I4Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="csd-Wz-75M"/>
                 <constraint firstAttribute="trailing" secondItem="7Q8-B2-zrn" secondAttribute="trailing" constant="8" id="eqF-F5-Iy6"/>
                 <constraint firstItem="bNt-sr-0EK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="g80-aT-CFo"/>
-                <constraint firstAttribute="trailing" secondItem="r9j-hy-74p" secondAttribute="trailing" id="jQe-rq-tNv"/>
+                <constraint firstAttribute="trailing" secondItem="r9j-hy-74p" secondAttribute="trailing" constant="8" id="jQe-rq-tNv"/>
                 <constraint firstItem="7Q8-B2-zrn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lcF-7y-6SK"/>
                 <constraint firstAttribute="bottom" secondItem="bNt-sr-0EK" secondAttribute="bottom" constant="8" id="pVe-NC-ejK"/>
                 <constraint firstAttribute="trailing" secondItem="wEc-TO-I4Z" secondAttribute="trailing" constant="8" id="xvs-If-ZNj"/>
-                <constraint firstItem="r9j-hy-74p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y4S-qu-coi"/>
+                <constraint firstItem="r9j-hy-74p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="y4S-qu-coi"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
