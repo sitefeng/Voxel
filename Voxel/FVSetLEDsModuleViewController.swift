@@ -147,6 +147,8 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
     
     // Updates both the Model and View of this view controller
     func drawLEDColorRectForXPos(xPos: CGFloat) {
+        let numberOfLEDs = self.delegate?.numberOfLEDsPerModule() as Int!
+        
         let colorArrayBefore = self.ledColorArray
         
         // Drawing on screen
@@ -155,7 +157,7 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         
         self.ledImageView.image?.drawInRect(self.ledImageView.bounds)
         
-        let ledIndex = max( floor(xPos / ledWidth), 0)
+        let ledIndex = min(max( floor(xPos / ledWidth), 0), CGFloat(numberOfLEDs-1))
         let ledRectXPos = ledIndex * ledWidth
         
         CGContextSetFillColorWithColor(context, self.currBrushColor.CGColor)
