@@ -1,0 +1,897 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */; };
+		AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */; };
+		AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */; };
+		AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */; };
+		AA22E8A81C4191200030CC83 /* FVSolidColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */; };
+		AA22E8AB1C4191A00030CC83 /* FVSetLEDsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */; };
+		AA22E8AC1C4191A00030CC83 /* FVSetLEDsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */; };
+		AA22E8B71C41B64B0030CC83 /* FVVoxelPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */; };
+		AA22E8B81C41B64B0030CC83 /* FVVoxelPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */; };
+		AA22E8BB1C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */; };
+		AA22E8BC1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */; };
+		AA22E8BF1C41B7260030CC83 /* FVSetLEDsColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */; };
+		AA22E8C01C41B7260030CC83 /* FVSetLEDsColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */; };
+		AA22E8D31C4C15AF0030CC83 /* FVVoxel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8D21C4C15AF0030CC83 /* FVVoxel.swift */; };
+		AA22E8E61C4C26B80030CC83 /* FVConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */; };
+		AA22E8E81C4C2B830030CC83 /* FVWirelessMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */; };
+		AA22E8EA1C4C2B8D0030CC83 /* FVWirelessMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */; };
+		AA22E8ED1C4C32620030CC83 /* FVWirelessConnectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */; };
+		AA22E8EF1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */; };
+		AA22E8F11C4C328B0030CC83 /* FVWirelessImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */; };
+		AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */; };
+		AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */; };
+		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
+		AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B051C2C9D8C00DB156C /* ViewController.swift */; };
+		AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */; };
+		AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */; };
+		AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */; };
+		AA6F5B1C1C2C9D8C00DB156C /* VoxelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B1B1C2C9D8C00DB156C /* VoxelTests.swift */; };
+		AA6F5B271C2C9D8C00DB156C /* VoxelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */; };
+		AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */; };
+		AA6F5B3D1C2CAF5A00DB156C /* HNString.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */; };
+		AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */; };
+		AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */; };
+		AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */; };
+		AA6F5B451C2CAF6C00DB156C /* HNDrawerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */; };
+		AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */; };
+		AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */; };
+		AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B4C1C2D033E00DB156C /* HNColor.swift */; };
+		AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */; };
+		AA6F5B5A1C2D061900DB156C /* FVHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */; };
+		AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */; };
+		AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */; };
+		AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */; };
+		AA6F5B661C2D065300DB156C /* FVLoadImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */; };
+		AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */; };
+		AA6F5B6A1C2D06A800DB156C /* FVCustomDrawViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */; };
+		AA6F5B6D1C2D06B500DB156C /* FVSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */; };
+		AA6F5B6E1C2D06B500DB156C /* FVSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */; };
+		AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */; };
+		AA6F5B721C2D152A00DB156C /* FVMyPatternViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */; };
+		AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */; };
+		AA6F5B781C2D15D400DB156C /* FVPreloadedImagesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */; };
+		AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */; };
+		AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */; };
+		AA6F5B831C2D16F700DB156C /* FVCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */; };
+		AA6F5B841C2D16F700DB156C /* FVCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */; };
+		AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B851C2D30D800DB156C /* FVMainCollectionViewCell.swift */; };
+		AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */; };
+		AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B941C2E024200DB156C /* FVBannerView.m */; };
+		AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */; };
+		AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */; };
+		AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */; };
+		AAD596581C35A42E006A92B7 /* FVSettingsTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */; };
+		D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C5C0D167A1469FA1EDC99D /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA6F5B181C2C9D8C00DB156C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6F5AF81C2C9D8C00DB156C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6F5AFF1C2C9D8C00DB156C;
+			remoteInfo = Voxel;
+		};
+		AA6F5B231C2C9D8C00DB156C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6F5AF81C2C9D8C00DB156C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA6F5AFF1C2C9D8C00DB156C;
+			remoteInfo = Voxel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		83C5C0D167A1469FA1EDC99D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVNavigationController.swift; sourceTree = "<group>"; };
+		AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVBrushPaletteViewController.swift; sourceTree = "<group>"; };
+		AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVBrushPaletteViewController.xib; sourceTree = "<group>"; };
+		AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSolidColorViewController.swift; sourceTree = "<group>"; };
+		AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSolidColorViewController.xib; sourceTree = "<group>"; };
+		AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsViewController.swift; sourceTree = "<group>"; };
+		AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsViewController.xib; sourceTree = "<group>"; };
+		AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVVoxelPreviewViewController.swift; sourceTree = "<group>"; };
+		AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVVoxelPreviewViewController.xib; sourceTree = "<group>"; };
+		AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsModuleViewController.swift; sourceTree = "<group>"; };
+		AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsModuleViewController.xib; sourceTree = "<group>"; };
+		AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSetLEDsColorViewController.swift; sourceTree = "<group>"; };
+		AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsColorViewController.xib; sourceTree = "<group>"; };
+		AA22E8D21C4C15AF0030CC83 /* FVVoxel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVVoxel.swift; sourceTree = "<group>"; };
+		AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVConnectionManager.swift; sourceTree = "<group>"; };
+		AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessMessageResponse.swift; sourceTree = "<group>"; };
+		AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessMessage.swift; sourceTree = "<group>"; };
+		AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessConnectionMessage.swift; sourceTree = "<group>"; };
+		AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessChangeSettingsMessage.swift; sourceTree = "<group>"; };
+		AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageMessage.swift; sourceTree = "<group>"; };
+		AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageSeriesMessage.swift; sourceTree = "<group>"; };
+		AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPatternAbstractViewController.swift; sourceTree = "<group>"; };
+		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA6F5B0B1C2C9D8C00DB156C /* Voxel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Voxel.xcdatamodel; sourceTree = "<group>"; };
+		AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA6F5B101C2C9D8C00DB156C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA6F5B121C2C9D8C00DB156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6F5B171C2C9D8C00DB156C /* VoxelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6F5B1B1C2C9D8C00DB156C /* VoxelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxelTests.swift; sourceTree = "<group>"; };
+		AA6F5B1D1C2C9D8C00DB156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6F5B221C2C9D8C00DB156C /* VoxelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoxelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxelUITests.swift; sourceTree = "<group>"; };
+		AA6F5B281C2C9D8C00DB156C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNGlobal.swift; sourceTree = "<group>"; };
+		AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNString.swift; sourceTree = "<group>"; };
+		AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNDrawerViewController.swift; sourceTree = "<group>"; };
+		AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNDrawerViewController.xib; sourceTree = "<group>"; };
+		AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNDrawerButton.swift; sourceTree = "<group>"; };
+		AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HNDrawerButton.xib; sourceTree = "<group>"; };
+		AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNAbstractViewController.swift; sourceTree = "<group>"; };
+		AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNMainNavigationController.swift; sourceTree = "<group>"; };
+		AA6F5B4C1C2D033E00DB156C /* HNColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HNColor.swift; sourceTree = "<group>"; };
+		AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVHomeViewController.swift; sourceTree = "<group>"; };
+		AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVHomeViewController.xib; sourceTree = "<group>"; };
+		AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPreloadedPatternViewController.swift; sourceTree = "<group>"; };
+		AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVPreloadedPatternViewController.xib; sourceTree = "<group>"; };
+		AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVLoadImageViewController.swift; sourceTree = "<group>"; };
+		AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVLoadImageViewController.xib; sourceTree = "<group>"; };
+		AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVCustomDrawViewController.swift; sourceTree = "<group>"; };
+		AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVCustomDrawViewController.xib; sourceTree = "<group>"; };
+		AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsViewController.swift; sourceTree = "<group>"; };
+		AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsViewController.xib; sourceTree = "<group>"; };
+		AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVMyPatternViewController.swift; sourceTree = "<group>"; };
+		AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMyPatternViewController.xib; sourceTree = "<group>"; };
+		AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPreloadedImagesViewController.swift; sourceTree = "<group>"; };
+		AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVPreloadedImagesViewController.xib; sourceTree = "<group>"; };
+		AA6F5B791C2D162100DB156C /* Voxel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Voxel-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVConnectionViewController.swift; sourceTree = "<group>"; };
+		AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVConnectionViewController.xib; sourceTree = "<group>"; };
+		AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVCameraViewController.swift; sourceTree = "<group>"; };
+		AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVCameraViewController.xib; sourceTree = "<group>"; };
+		AA6F5B851C2D30D800DB156C /* FVMainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMainCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA6F5B931C2E024200DB156C /* FVBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBannerView.h; sourceTree = "<group>"; };
+		AA6F5B941C2E024200DB156C /* FVBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBannerView.m; sourceTree = "<group>"; };
+		AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableHeader.swift; sourceTree = "<group>"; };
+		AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsTableHeader.xib; sourceTree = "<group>"; };
+		F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA6F5AFD1C2C9D8C00DB156C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D14C559615F8C7FC1CE918D7 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B141C2C9D8C00DB156C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B1F1C2C9D8C00DB156C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA22E8A01C3A5DE50030CC83 /* Reusable Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */,
+			);
+			name = "Reusable Controllers";
+			sourceTree = "<group>";
+		};
+		AA22E8E41C4C25F50030CC83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA22E8D21C4C15AF0030CC83 /* FVVoxel.swift */,
+				AA22E8EB1C4C2BA40030CC83 /* Wireless Connection */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AA22E8EB1C4C2BA40030CC83 /* Wireless Connection */ = {
+			isa = PBXGroup;
+			children = (
+				AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */,
+				AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */,
+				AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */,
+				AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */,
+				AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */,
+				AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */,
+				AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */,
+			);
+			name = "Wireless Connection";
+			sourceTree = "<group>";
+		};
+		AA6F5AF71C2C9D8C00DB156C = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B021C2C9D8C00DB156C /* Voxel */,
+				AA6F5B1A1C2C9D8C00DB156C /* VoxelTests */,
+				AA6F5B251C2C9D8C00DB156C /* VoxelUITests */,
+				AA6F5B011C2C9D8C00DB156C /* Products */,
+				E324CE08236C760D202E013F /* Pods */,
+				B1B20D5DAF110157DA24D6A2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AA6F5B011C2C9D8C00DB156C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B001C2C9D8C00DB156C /* Voxel.app */,
+				AA6F5B171C2C9D8C00DB156C /* VoxelTests.xctest */,
+				AA6F5B221C2C9D8C00DB156C /* VoxelUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA6F5B021C2C9D8C00DB156C /* Voxel */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */,
+				AA6F5B051C2C9D8C00DB156C /* ViewController.swift */,
+				AA6F5B471C2CAF8800DB156C /* Convenience */,
+				AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */,
+				AA22E8E41C4C25F50030CC83 /* Model */,
+				AA22E8A01C3A5DE50030CC83 /* Reusable Controllers */,
+				AA6F5B491C2D012000DB156C /* HNMainNavigationController.swift */,
+				AA6F5B461C2CAF7800DB156C /* Navigation Drawer */,
+				AA6F5B541C2D05B600DB156C /* View Controllers */,
+				AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */,
+				AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */,
+				AA6F5B121C2C9D8C00DB156C /* Info.plist */,
+				AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */,
+			);
+			path = Voxel;
+			sourceTree = "<group>";
+		};
+		AA6F5B1A1C2C9D8C00DB156C /* VoxelTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B1B1C2C9D8C00DB156C /* VoxelTests.swift */,
+				AA6F5B1D1C2C9D8C00DB156C /* Info.plist */,
+			);
+			path = VoxelTests;
+			sourceTree = "<group>";
+		};
+		AA6F5B251C2C9D8C00DB156C /* VoxelUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B261C2C9D8C00DB156C /* VoxelUITests.swift */,
+				AA6F5B281C2C9D8C00DB156C /* Info.plist */,
+			);
+			path = VoxelUITests;
+			sourceTree = "<group>";
+		};
+		AA6F5B461C2CAF7800DB156C /* Navigation Drawer */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B3E1C2CAF6C00DB156C /* HNDrawerViewController.swift */,
+				AA6F5B3F1C2CAF6C00DB156C /* HNDrawerViewController.xib */,
+				AA6F5B401C2CAF6C00DB156C /* HNDrawerButton.swift */,
+				AA6F5B411C2CAF6C00DB156C /* HNDrawerButton.xib */,
+			);
+			name = "Navigation Drawer";
+			sourceTree = "<group>";
+		};
+		AA6F5B471C2CAF8800DB156C /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */,
+				AA6F5B4C1C2D033E00DB156C /* HNColor.swift */,
+				AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */,
+			);
+			name = Convenience;
+			sourceTree = "<group>";
+		};
+		AA6F5B541C2D05B600DB156C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */,
+				AA6F5B961C2E024800DB156C /* Home */,
+				AA6F5B731C2D159300DB156C /* My Pattern */,
+				AA6F5B741C2D15C000DB156C /* Preloaded Pattern */,
+				AA6F5B7D1C2D16D800DB156C /* FVConnectionViewController.swift */,
+				AA6F5B7E1C2D16D800DB156C /* FVConnectionViewController.xib */,
+				AA6F5B811C2D16F700DB156C /* FVCameraViewController.swift */,
+				AA6F5B821C2D16F700DB156C /* FVCameraViewController.xib */,
+				AA6F5B6B1C2D06B500DB156C /* FVSettingsViewController.swift */,
+				AA6F5B6C1C2D06B500DB156C /* FVSettingsViewController.xib */,
+				AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */,
+				AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */,
+				AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */,
+				AAD596561C35A42E006A92B7 /* FVSettingsTableHeader.xib */,
+				AA6F5B791C2D162100DB156C /* Voxel-Bridging-Header.h */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AA6F5B731C2D159300DB156C /* My Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B6F1C2D152A00DB156C /* FVMyPatternViewController.swift */,
+				AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */,
+				AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */,
+				AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */,
+				AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */,
+				AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */,
+				AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */,
+				AA22E8B61C41B64B0030CC83 /* FVVoxelPreviewViewController.xib */,
+				AA22E8B91C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift */,
+				AA22E8BA1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib */,
+				AA22E8BD1C41B7260030CC83 /* FVSetLEDsColorViewController.swift */,
+				AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */,
+				AA6F5B631C2D065300DB156C /* FVLoadImageViewController.swift */,
+				AA6F5B641C2D065300DB156C /* FVLoadImageViewController.xib */,
+				AA6F5B671C2D06A800DB156C /* FVCustomDrawViewController.swift */,
+				AA6F5B681C2D06A800DB156C /* FVCustomDrawViewController.xib */,
+				AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */,
+				AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */,
+			);
+			name = "My Pattern";
+			sourceTree = "<group>";
+		};
+		AA6F5B741C2D15C000DB156C /* Preloaded Pattern */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B5F1C2D064000DB156C /* FVPreloadedPatternViewController.swift */,
+				AA6F5B601C2D064000DB156C /* FVPreloadedPatternViewController.xib */,
+				AA6F5B751C2D15D400DB156C /* FVPreloadedImagesViewController.swift */,
+				AA6F5B761C2D15D400DB156C /* FVPreloadedImagesViewController.xib */,
+			);
+			name = "Preloaded Pattern";
+			sourceTree = "<group>";
+		};
+		AA6F5B961C2E024800DB156C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AA6F5B571C2D061900DB156C /* FVHomeViewController.swift */,
+				AA6F5B581C2D061900DB156C /* FVHomeViewController.xib */,
+				AA6F5B851C2D30D800DB156C /* FVMainCollectionViewCell.swift */,
+				AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */,
+				AA6F5B931C2E024200DB156C /* FVBannerView.h */,
+				AA6F5B941C2E024200DB156C /* FVBannerView.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		B1B20D5DAF110157DA24D6A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83C5C0D167A1469FA1EDC99D /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E324CE08236C760D202E013F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */,
+				F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA6F5AFF1C2C9D8C00DB156C /* Voxel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6F5B2B1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "Voxel" */;
+			buildPhases = (
+				28EF463898E58C483C1DD953 /* Check Pods Manifest.lock */,
+				AA6F5AFC1C2C9D8C00DB156C /* Sources */,
+				AA6F5AFD1C2C9D8C00DB156C /* Frameworks */,
+				AA6F5AFE1C2C9D8C00DB156C /* Resources */,
+				22E4286479147DC5EFC88053 /* Embed Pods Frameworks */,
+				A182550A967C81698ECC6E01 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Voxel;
+			productName = Voxel;
+			productReference = AA6F5B001C2C9D8C00DB156C /* Voxel.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA6F5B161C2C9D8C00DB156C /* VoxelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6F5B2E1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelTests" */;
+			buildPhases = (
+				AA6F5B131C2C9D8C00DB156C /* Sources */,
+				AA6F5B141C2C9D8C00DB156C /* Frameworks */,
+				AA6F5B151C2C9D8C00DB156C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6F5B191C2C9D8C00DB156C /* PBXTargetDependency */,
+			);
+			name = VoxelTests;
+			productName = VoxelTests;
+			productReference = AA6F5B171C2C9D8C00DB156C /* VoxelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA6F5B211C2C9D8C00DB156C /* VoxelUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA6F5B311C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelUITests" */;
+			buildPhases = (
+				AA6F5B1E1C2C9D8C00DB156C /* Sources */,
+				AA6F5B1F1C2C9D8C00DB156C /* Frameworks */,
+				AA6F5B201C2C9D8C00DB156C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA6F5B241C2C9D8C00DB156C /* PBXTargetDependency */,
+			);
+			name = VoxelUITests;
+			productName = VoxelUITests;
+			productReference = AA6F5B221C2C9D8C00DB156C /* VoxelUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA6F5AF81C2C9D8C00DB156C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Si Te Feng";
+				TargetAttributes = {
+					AA6F5AFF1C2C9D8C00DB156C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					AA6F5B161C2C9D8C00DB156C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = AA6F5AFF1C2C9D8C00DB156C;
+					};
+					AA6F5B211C2C9D8C00DB156C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = AA6F5AFF1C2C9D8C00DB156C;
+					};
+				};
+			};
+			buildConfigurationList = AA6F5AFB1C2C9D8C00DB156C /* Build configuration list for PBXProject "Voxel" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA6F5AF71C2C9D8C00DB156C;
+			productRefGroup = AA6F5B011C2C9D8C00DB156C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA6F5AFF1C2C9D8C00DB156C /* Voxel */,
+				AA6F5B161C2C9D8C00DB156C /* VoxelTests */,
+				AA6F5B211C2C9D8C00DB156C /* VoxelUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA6F5AFE1C2C9D8C00DB156C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F5B6A1C2D06A800DB156C /* FVCustomDrawViewController.xib in Resources */,
+				AA6F5B841C2D16F700DB156C /* FVCameraViewController.xib in Resources */,
+				AA6F5B781C2D15D400DB156C /* FVPreloadedImagesViewController.xib in Resources */,
+				AA22E8AC1C4191A00030CC83 /* FVSetLEDsViewController.xib in Resources */,
+				AA6F5B451C2CAF6C00DB156C /* HNDrawerButton.xib in Resources */,
+				AA22E8C01C41B7260030CC83 /* FVSetLEDsColorViewController.xib in Resources */,
+				AA6F5B6E1C2D06B500DB156C /* FVSettingsViewController.xib in Resources */,
+				AA22E8A81C4191200030CC83 /* FVSolidColorViewController.xib in Resources */,
+				AA6F5B5A1C2D061900DB156C /* FVHomeViewController.xib in Resources */,
+				AA6F5B721C2D152A00DB156C /* FVMyPatternViewController.xib in Resources */,
+				AA6F5B661C2D065300DB156C /* FVLoadImageViewController.xib in Resources */,
+				AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */,
+				AA22E8B81C41B64B0030CC83 /* FVVoxelPreviewViewController.xib in Resources */,
+				AA22E8BC1C41B6D40030CC83 /* FVSetLEDsModuleViewController.xib in Resources */,
+				AA6F5B801C2D16D800DB156C /* FVConnectionViewController.xib in Resources */,
+				AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */,
+				AA6F5B431C2CAF6C00DB156C /* HNDrawerViewController.xib in Resources */,
+				AAD596581C35A42E006A92B7 /* FVSettingsTableHeader.xib in Resources */,
+				AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */,
+				AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */,
+				AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */,
+				AA6F5B621C2D064000DB156C /* FVPreloadedPatternViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B151C2C9D8C00DB156C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B201C2C9D8C00DB156C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22E4286479147DC5EFC88053 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28EF463898E58C483C1DD953 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A182550A967C81698ECC6E01 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA6F5AFC1C2C9D8C00DB156C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F5B651C2D065300DB156C /* FVLoadImageViewController.swift in Sources */,
+				AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */,
+				AA22E8B71C41B64B0030CC83 /* FVVoxelPreviewViewController.swift in Sources */,
+				AA6F5B7F1C2D16D800DB156C /* FVConnectionViewController.swift in Sources */,
+				AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */,
+				AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */,
+				AA22E8F11C4C328B0030CC83 /* FVWirelessImageMessage.swift in Sources */,
+				AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */,
+				AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */,
+				AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */,
+				AA22E8BB1C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift in Sources */,
+				AA6F5B6D1C2D06B500DB156C /* FVSettingsViewController.swift in Sources */,
+				AA22E8BF1C41B7260030CC83 /* FVSetLEDsColorViewController.swift in Sources */,
+				AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */,
+				AA22E8D31C4C15AF0030CC83 /* FVVoxel.swift in Sources */,
+				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
+				AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */,
+				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
+				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
+				AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */,
+				AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */,
+				AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */,
+				AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */,
+				AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */,
+				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,
+				AA22E8EF1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift in Sources */,
+				AA22E8AB1C4191A00030CC83 /* FVSetLEDsViewController.swift in Sources */,
+				AA22E8EA1C4C2B8D0030CC83 /* FVWirelessMessage.swift in Sources */,
+				AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */,
+				AA22E8E81C4C2B830030CC83 /* FVWirelessMessageResponse.swift in Sources */,
+				AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */,
+				AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */,
+				AA22E8ED1C4C32620030CC83 /* FVWirelessConnectionMessage.swift in Sources */,
+				AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */,
+				AA22E8E61C4C26B80030CC83 /* FVConnectionManager.swift in Sources */,
+				AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */,
+				AA6F5B3D1C2CAF5A00DB156C /* HNString.swift in Sources */,
+				AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */,
+				AA6F5B831C2D16F700DB156C /* FVCameraViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B131C2C9D8C00DB156C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F5B1C1C2C9D8C00DB156C /* VoxelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6F5B1E1C2C9D8C00DB156C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA6F5B271C2C9D8C00DB156C /* VoxelUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA6F5B191C2C9D8C00DB156C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6F5AFF1C2C9D8C00DB156C /* Voxel */;
+			targetProxy = AA6F5B181C2C9D8C00DB156C /* PBXContainerItemProxy */;
+		};
+		AA6F5B241C2C9D8C00DB156C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA6F5AFF1C2C9D8C00DB156C /* Voxel */;
+			targetProxy = AA6F5B231C2C9D8C00DB156C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA6F5B101C2C9D8C00DB156C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA6F5B291C2C9D8C00DB156C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA6F5B2A1C2C9D8C00DB156C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA6F5B2C1C2C9D8C00DB156C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Voxel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voxel/Voxel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA6F5B2D1C2C9D8C00DB156C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0883AF4EAE32FB73F4D8878 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Voxel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.Voxel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Voxel/Voxel-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		AA6F5B2F1C2C9D8C00DB156C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VoxelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.VoxelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voxel.app/Voxel";
+			};
+			name = Debug;
+		};
+		AA6F5B301C2C9D8C00DB156C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VoxelTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.VoxelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voxel.app/Voxel";
+			};
+			name = Release;
+		};
+		AA6F5B321C2C9D8C00DB156C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VoxelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.VoxelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Voxel;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AA6F5B331C2C9D8C00DB156C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VoxelUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fusion.VoxelUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Voxel;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA6F5AFB1C2C9D8C00DB156C /* Build configuration list for PBXProject "Voxel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6F5B291C2C9D8C00DB156C /* Debug */,
+				AA6F5B2A1C2C9D8C00DB156C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6F5B2B1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "Voxel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6F5B2C1C2C9D8C00DB156C /* Debug */,
+				AA6F5B2D1C2C9D8C00DB156C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6F5B2E1C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6F5B2F1C2C9D8C00DB156C /* Debug */,
+				AA6F5B301C2C9D8C00DB156C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA6F5B311C2C9D8C00DB156C /* Build configuration list for PBXNativeTarget "VoxelUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA6F5B321C2C9D8C00DB156C /* Debug */,
+				AA6F5B331C2C9D8C00DB156C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA6F5B0B1C2C9D8C00DB156C /* Voxel.xcdatamodel */,
+			);
+			currentVersion = AA6F5B0B1C2C9D8C00DB156C /* Voxel.xcdatamodel */;
+			path = Voxel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AA6F5AF81C2C9D8C00DB156C /* Project object */;
+}

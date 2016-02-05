@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVConnectionViewController" customModule="Voxel" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="fH4-CB-0hQ" id="eIB-Kc-bIG"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGradient" translatesAutoresizingMaskIntoConstraints="NO" id="pwe-8s-ua3">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fH4-CB-0hQ">
+                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FGL-KC-xl7">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fH4-CB-0hQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Qx-Qm-SZu"/>
+                <constraint firstItem="fH4-CB-0hQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="5WT-8v-sz8"/>
+                <constraint firstAttribute="bottom" secondItem="fH4-CB-0hQ" secondAttribute="bottom" id="R5B-D6-7O7"/>
+                <constraint firstItem="pwe-8s-ua3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RXT-le-g4S"/>
+                <constraint firstAttribute="bottom" secondItem="pwe-8s-ua3" secondAttribute="bottom" id="eoL-e5-7R6"/>
+                <constraint firstAttribute="trailing" secondItem="pwe-8s-ua3" secondAttribute="trailing" id="h5s-5c-flY"/>
+                <constraint firstAttribute="trailing" secondItem="fH4-CB-0hQ" secondAttribute="trailing" id="iYg-bJ-CRO"/>
+                <constraint firstItem="pwe-8s-ua3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="l2v-5o-dTq"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mainGradient" width="2" height="1920"/>
+    </resources>
+</document>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVSetLEDsViewController" customModule="Voxel" customModuleProvider="target">
+            <connections>
+                <outlet property="setLEDsColorView" destination="X7p-zs-9i0" id="mmo-df-III"/>
+                <outlet property="setLEDsModuleView" destination="Ek0-3f-HrF" id="IbH-Jq-gnZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="voxelPreview" destination="Kl8-qn-m4I" id="BJC-Jz-Iie"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGradient" translatesAutoresizingMaskIntoConstraints="NO" id="N4D-qr-Doa">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kl8-qn-m4I">
+                    <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Gsm-Un-BvQ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ek0-3f-HrF">
+                    <rect key="frame" x="0.0" y="274" width="600" height="153"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="153" id="CwB-c2-sEr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7p-zs-9i0">
+                    <rect key="frame" x="0.0" y="458" width="600" height="130"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="130" id="4zD-nj-9Bk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="N4D-qr-Doa" secondAttribute="bottom" id="2kk-Fo-f3p"/>
+                <constraint firstAttribute="trailing" secondItem="Ek0-3f-HrF" secondAttribute="trailing" id="ABu-lM-Vnd"/>
+                <constraint firstItem="N4D-qr-Doa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Klg-rF-O3M"/>
+                <constraint firstItem="Kl8-qn-m4I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="NHJ-tH-anX"/>
+                <constraint firstAttribute="trailing" secondItem="Kl8-qn-m4I" secondAttribute="trailing" id="SZi-D8-lT6"/>
+                <constraint firstItem="Ek0-3f-HrF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UXW-gd-TxZ"/>
+                <constraint firstAttribute="bottom" secondItem="X7p-zs-9i0" secondAttribute="bottom" constant="12" id="ccZ-42-ygm"/>
+                <constraint firstItem="X7p-zs-9i0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ek0-3f-HrF" secondAttribute="bottom" constant="10" id="dNM-eu-haV"/>
+                <constraint firstItem="Ek0-3f-HrF" firstAttribute="top" secondItem="Kl8-qn-m4I" secondAttribute="bottom" constant="10" id="iQq-q6-OI4"/>
+                <constraint firstAttribute="trailing" secondItem="N4D-qr-Doa" secondAttribute="trailing" id="jul-Tj-n13"/>
+                <constraint firstAttribute="trailing" secondItem="X7p-zs-9i0" secondAttribute="trailing" id="lbp-Is-Qkz"/>
+                <constraint firstItem="N4D-qr-Doa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="m8p-wq-x1l"/>
+                <constraint firstItem="Kl8-qn-m4I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mpf-HZ-8sj"/>
+                <constraint firstItem="X7p-zs-9i0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="re7-Gh-Ekf"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mainGradient" width="2" height="1920"/>
+    </resources>
+</document>
