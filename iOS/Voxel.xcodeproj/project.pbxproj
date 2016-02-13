@@ -30,7 +30,6 @@
 		AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */; };
 		AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */; };
 		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
-		AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B051C2C9D8C00DB156C /* ViewController.swift */; };
 		AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */; };
 		AA6F5B0E1C2C9D8C00DB156C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */; };
 		AA6F5B111C2C9D8C00DB156C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B0F1C2C9D8C00DB156C /* LaunchScreen.storyboard */; };
@@ -117,7 +116,6 @@
 		AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPatternAbstractViewController.swift; sourceTree = "<group>"; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA6F5B051C2C9D8C00DB156C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA6F5B0B1C2C9D8C00DB156C /* Voxel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Voxel.xcdatamodel; sourceTree = "<group>"; };
 		AA6F5B0D1C2C9D8C00DB156C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA6F5B101C2C9D8C00DB156C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */,
-				AA6F5B051C2C9D8C00DB156C /* ViewController.swift */,
 				AA6F5B471C2CAF8800DB156C /* Convenience */,
 				AA6F5B481C2D012000DB156C /* HNAbstractViewController.swift */,
 				AA22E8E41C4C25F50030CC83 /* Model */,
@@ -624,7 +621,6 @@
 				AA22E8EA1C4C2B8D0030CC83 /* FVWirelessMessage.swift in Sources */,
 				AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */,
 				AA22E8E81C4C2B830030CC83 /* FVWirelessMessageResponse.swift in Sources */,
-				AA6F5B061C2C9D8C00DB156C /* ViewController.swift in Sources */,
 				AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */,
 				AA22E8ED1C4C32620030CC83 /* FVWirelessConnectionMessage.swift in Sources */,
 				AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */,
