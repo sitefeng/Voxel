@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
 #include "FS.h"
 
+
 //////////////////////
 // Definitions //
 //////////////////////
@@ -25,20 +26,21 @@ const int DIGITAL_PIN = 12; // Digital pin to be read
 // User Settings             //
 ///////////////////////////////
 int ledFrequency = 4; //Hz
-float brightness = 1; // 0 to 1
-int numModules = 5;
+float brightness = 1; // 0 to 1 TODO
+int numRepeats = 1; // TODO
+int numModules = 5; // TODO
 
 ///////////////////////////////
 // Private Global Variables  //
 ///////////////////////////////
-volatile bool shouldStart = false;
+volatile bool shouldStart = true;
 
 unsigned char *bitmap = NULL;
 int imageWidth = 0;
 int imageHeight = 0;
 
-#define base64ImageSize 512;
-char base64Image[base64ImageSize];
+#define base64ImageLength 512
+char base64Image[base64ImageLength];
 
 
 //192.168.4.1/
@@ -94,68 +96,64 @@ void setupWiFi()
 }
 
 
+String base64_chars = 
+             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+             "abcdefghijklmnopqrstuvwxyz"
+             "0123456789+/";
 
 
-static char encoding_table[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-    'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-    'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
-    'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-    'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-    'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-    'w', 'x', 'y', 'z', '0', '1', '2', '3',
-    '4', '5', '6', '7', '8', '9', '+', '/'};
-static char *decoding_table = NULL;
-static int mod_table[] = {0, 2, 1};
+bool is_base64(char c) {
+  return (isalnum(c) || (c == '+') || (c == '/'));
+}
 
-    
-unsigned char *base64_decode(const char *data,
-                             size_t input_length,
-                             size_t *output_length) {
-    
-    if (decoding_table == NULL) build_decoding_table();
-    
-    if (input_length % 4 != 0) return NULL;
-    
-    *output_length = input_length / 4 * 3;
-    if (data[input_length - 1] == '=') (*output_length)--;
-    if (data[input_length - 2] == '=') (*output_length)--;
-    
-    unsigned char *decoded_data = malloc(*output_length);
-    if (decoded_data == NULL) return NULL;
-    
-    for (int i = 0, j = 0; i < input_length;) {
-        
-        uint32_t sextet_a = data[i] == '=' ? 0 & i++ : decoding_table[data[i++]];
-        uint32_t sextet_b = data[i] == '=' ? 0 & i++ : decoding_table[data[i++]];
-        uint32_t sextet_c = data[i] == '=' ? 0 & i++ : decoding_table[data[i++]];
-        uint32_t sextet_d = data[i] == '=' ? 0 & i++ : decoding_table[data[i++]];
-        
-        uint32_t triple = (sextet_a << 3 * 6)
-        + (sextet_b << 2 * 6)
-        + (sextet_c << 1 * 6)
-        + (sextet_d << 0 * 6);
-        
-        if (j < *output_length) decoded_data[j++] = (triple >> 2 * 8) & 0xFF;
-        if (j < *output_length) decoded_data[j++] = (triple >> 1 * 8) & 0xFF;
-        if (j < *output_length) decoded_data[j++] = (triple >> 0 * 8) & 0xFF;
+
+unsigned char* base64_decode(String encoded_string, size_t imageSize) {
+  int in_len = encoded_string.length();
+  int i = 0;
+  int j = 0;
+  int in_ = 0;
+  char char_array_4[4], char_array_3[3];
+  unsigned char *ret = (unsigned char*)malloc(imageSize*3);
+
+  int currPos = 0;
+  while (in_len-- && ( encoded_string[in_] != '=') && is_base64(encoded_string[in_])) {
+    char_array_4[i++] = encoded_string[in_]; in_++;
+    if (i ==4) {
+      for (i = 0; i <4; i++)
+        char_array_4[i] = base64_chars.indexOf(char_array_4[i]);
+
+      char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
+      char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
+      char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
+
+      for (i = 0; (i < 3); i++) {
+          ret[currPos] = char_array_3[i];
+          currPos++;
+      }
+      i = 0;
     }
-    
-    return decoded_data;
-}
-    
-    
-void build_decoding_table() {
-    
-    decoding_table = malloc(256);
-    
-    for (int i = 0; i < 64; i++)
-        decoding_table[(unsigned char) encoding_table[i]] = i;
+  }
+
+  if (i) {
+    for (j = i; j <4; j++)
+      char_array_4[j] = 0;
+
+    for (j = 0; j <4; j++)
+      char_array_4[j] = base64_chars.indexOf(char_array_4[j]);
+
+    char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
+    char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
+    char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
+
+    for (j = 0; (j < i - 1); j++) {
+      ret[currPos] = char_array_3[j];
+      currPos++;
+    }
+  }
+
+  return ret;
 }
 
-
-void base64_cleanup() {
-    free(decoding_table);
-}
 
 
 // ***********************************************
@@ -180,27 +178,33 @@ void loop()
 
   int startPos = commandStr.indexOf("/") + 1;
   commandStr.remove(0, startPos);
-  Serial.println(commandStr);
 
   int endPos = commandStr.indexOf(" ");
   commandStr.remove(endPos);
-  Serial.println(commandStr);
 
   String commandId = commandStr.substring(0, 1);
-  commandStr.remove(0, 1);
-
+  imageWidth = commandStr.substring(1, 5).toInt();
+  imageHeight = commandStr.substring(5, 9).toInt();
+  commandStr.remove(0, 9);
+  Serial.print(imageWidth);
+  Serial.print(", ");
+  Serial.println(imageHeight);
+  Serial.print("imageBase64: ");
+  Serial.println(commandStr);
+  
   size_t decodedLength = 0;
   commandStr.toCharArray(base64Image, base64ImageLength);
-  bitmap = base64_decode(&base64Image, commandStr.length(), &decodedLength);
-    
+//  bitmap = base64_decode(base64Image, commandStr.length(), &decodedLength);
+  bitmap = base64_decode(base64Image, imageWidth*imageHeight);
+  
   // Prepare the response. Start with the common header:
   String s = "HTTP/1.1 200 OK\r\n";
   s += "Content-Type: text/html\r\n\r\n";
   s += "<!DOCTYPE HTML>\r\n<html>\r\n";
   
-  s += "<h1>Hello World</h1>\r\n";
-  s += "Command:";
-  s += commandStr;
+  s += "<h1>Fusion Voxel</h1>\r\n";
+  s += "CommandId:";
+  s += commandId;
   s += "<hr/>";
   
   s += "<br/>\n";
@@ -218,9 +222,38 @@ void loop()
   delay(10);
   Serial.println("Client disonnected");
 
-  while (shouldStart) {
-    shouldStart = false;
-    displayImage();
+  // Render the Actual Image
+  if (commandId.equals("1")) {
+    error("Not Implemented!");
+    
+  } else if (commandId.equals("2")) {
+    error("Not Implemented!");
+    
+  } else if (commandId.equals("3")) {
+    for(int i=0; i<imageWidth*imageHeight*3; i++) {
+      const char currByte = bitmap[i];
+      Serial.print(currByte);
+    }
+    Serial.println("\n**********");
+    
+    while(true) {
+      while (!shouldStart) {
+        WiFiClient client = server.available();
+        if (client) {
+          Serial.println("While loop RETURNED");
+          return;
+        }
+        delay(50);
+      }
+
+      for (int r=0; r<numRepeats; r++) {
+        displayImage();
+      }
+      shouldStart = false;
+    }
+    
+  } else {
+    error("Command not supported");
   }
   
 }
@@ -228,21 +261,30 @@ void loop()
 
 void displayImage() {
   for (int i=0; i< imageWidth; i++) {
-      uint8_t r = bitmap[i];
-      uint8_t g = bitmap[i+1];
-      uint8_t b = bitmap[i+2];
-
       for (int j=0; j< imageHeight; j++) {
-        
+        uint8_t r = bitmap[i*3 + 0 + j*imageWidth*3];
+        uint8_t g = bitmap[i*3 + 1 + j*imageWidth*3];
+        uint8_t b = bitmap[i*3 + 2 + j*imageWidth*3];
+
+        pushLEDColor(r, g, b);
+        Serial.print(r);
+        Serial.print(",");
+        Serial.print(g);
+        Serial.print(",");
+        Serial.print(b);
+        Serial.print("|");
       }
-      
-      delay(1/freq * 1000);
+
+      Serial.println("XXX");
+
+      delay(1000 / ledFrequency);
   }
 }
 
 
 // Interrupt Callback Functions
 void buttonPressed() {
+  Serial.println("ButtonPressed");
   shouldStart = true;
   delay(10);
 }
@@ -271,4 +313,18 @@ void clearLEDModules() {
       pushLEDColor(r,g,b);
   }
 }
+
+
+// Debug Functions
+void error(String err) {
+  Serial.print("ERROR: ");
+  Serial.println(err);
+  for (int i=0; i< 10; i++) {
+    digitalWrite(LED_PIN, HIGH);
+    delay(250);
+    digitalWrite(LED_PIN, LOW);
+    delay(250);
+  }
+}
+
 

@@ -127,6 +127,7 @@ class FVSetLEDsViewController: FVPatternAbstractViewController, FVVoxelPreviewVi
     override func sendButtonPressed() {
         let combinedArray = self.voxelPreviewVC.combinedColorArray()
         print(combinedArray)
+        
     }
     
 }
