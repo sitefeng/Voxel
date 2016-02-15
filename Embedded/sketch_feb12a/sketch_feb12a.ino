@@ -1,4 +1,5 @@
 #include <ESP8266WiFi.h>
+#include "FS.h"
 
 //////////////////////
 // WiFi Definitions //
@@ -8,7 +9,7 @@ const char WiFiAPPSK[] = "sparkfun";
 /////////////////////
 // Pin Definitions //
 /////////////////////
-const int LED_PIN = 0; // Thing's onboard, green LED
+const int LED_PIN = 0; // onboard LED
 
 const int RED_PIN = 12;
 const int GREEN_PIN = 13;
@@ -21,6 +22,7 @@ const int DIGITAL_PIN = 12; // Digital pin to be read
 
 int ledStatus = 0;
 
+//192.168.4.1/
 WiFiServer server(80);
 
 void setup() 
@@ -30,6 +32,51 @@ void setup()
   server.begin();
 }
 
+
+void initHardware() {
+  Serial.begin(115200);
+
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(RED_PIN, OUTPUT);
+  pinMode(GREEN_PIN, OUTPUT);
+  pinMode(BLUE_PIN, OUTPUT);
+  
+  digitalWrite(LED_PIN, LOW);
+  digitalWrite(RED_PIN, HIGH);
+  digitalWrite(GREEN_PIN, HIGH);
+  digitalWrite(BLUE_PIN, HIGH);
+
+  pinMode(BUTTON_PIN, INPUT);
+  
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), buttonPressed, FALLING);
+}
+
+
+void setupWiFi()
+{
+  WiFi.mode(WIFI_AP);
+
+  // Do a little work to get a unique-ish name. Append the
+  // last two bytes of the MAC (HEX'd) to "Thing-":
+  uint8_t mac[WL_MAC_ADDR_LENGTH];
+  WiFi.softAPmacAddress(mac);
+  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
+                 String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
+  macID.toUpperCase();
+  String AP_NameString = "Fusion Voxel " + macID;
+
+  char AP_NameChar[AP_NameString.length() + 1];
+  memset(AP_NameChar, 0, AP_NameString.length() + 1);
+
+  for (int i=0; i<AP_NameString.length(); i++)
+    AP_NameChar[i] = AP_NameString.charAt(i);
+
+  WiFi.softAP(AP_NameChar, WiFiAPPSK);
+}
+
+
+// ***********************************************
+// Repeating Loop Function
 void loop() 
 {
   // Check if a client has connected
@@ -39,8 +86,9 @@ void loop()
   }
 
   // Read the first line of the request
+  
   String req = client.readStringUntil('\r');
-  Serial.println(req);
+  
   client.flush();
 
   // Match the request
@@ -55,15 +103,11 @@ void loop()
     ledStatus = -99;
   }
 
-  // Set GPIO5 according to the request
   if (ledStatus >= 0) {
     digitalWrite(LED_PIN, !ledStatus);
-    digitalWrite(GREEN_PIN, ledStatus);
-    digitalWrite(BLUE_PIN, ledStatus);
-    digitalWrite(RED_PIN, ledStatus);
+    changeFirstLEDColor(ledStatus*100, ledStatus*100, !ledStatus*200);
   }
   
-
   client.flush();
 
   // Prepare the response. Start with the common header:
@@ -94,61 +138,28 @@ void loop()
   s += "</html>\n";
 
   // Send the response to the client
-  client.print(s);
+  client.print("");
   delay(10);
   Serial.println("Client disonnected");
 
-  // The client will actually be disconnected 
-  // when the function returns and 'client' object is detroyed
 
 }
 
-void setupWiFi()
-{
-  WiFi.mode(WIFI_AP);
 
-  // Do a little work to get a unique-ish name. Append the
-  // last two bytes of the MAC (HEX'd) to "Thing-":
-  uint8_t mac[WL_MAC_ADDR_LENGTH];
-  WiFi.softAPmacAddress(mac);
-  String macID = String(mac[WL_MAC_ADDR_LENGTH - 2], HEX) +
-                 String(mac[WL_MAC_ADDR_LENGTH - 1], HEX);
-  macID.toUpperCase();
-  String AP_NameString = "Fusion Voxel " + macID;
 
-  char AP_NameChar[AP_NameString.length() + 1];
-  memset(AP_NameChar, 0, AP_NameString.length() + 1);
-
-  for (int i=0; i<AP_NameString.length(); i++)
-    AP_NameChar[i] = AP_NameString.charAt(i);
-
-  WiFi.softAP(AP_NameChar, WiFiAPPSK);
-}
-
-void initHardware() {
-  Serial.begin(115200);
-
-  pinMode(LED_PIN, OUTPUT);
-  pinMode(RED_PIN, OUTPUT);
-  pinMode(GREEN_PIN, OUTPUT);
-  pinMode(BLUE_PIN, OUTPUT);
-  
-  digitalWrite(LED_PIN, LOW);
-  digitalWrite(RED_PIN, HIGH);
-  digitalWrite(GREEN_PIN, HIGH);
-  digitalWrite(BLUE_PIN, HIGH);
-
-  pinMode(BUTTON_PIN, INPUT);
-  
-  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), buttonPressed, FALLING);
-}
-
+// Interrupt Callback Functions
 void buttonPressed() {
   ledStatus = !ledStatus;
   digitalWrite(LED_PIN, !ledStatus);
-  analogWrite(RED_PIN, 100*!ledStatus);
-  analogWrite(GREEN_PIN, 100*!ledStatus);
-  analogWrite(BLUE_PIN, 100*!ledStatus);
+  changeFirstLEDColor(ledStatus*100, ledStatus*100, !ledStatus*200);
   delay(10);
+}
+
+// Convenience Functions
+
+void changeFirstLEDColor(int r, int g, int b) {
+  analogWrite(RED_PIN, 255 - r);
+  analogWrite(GREEN_PIN, 255 - g);
+  analogWrite(BLUE_PIN, 255 - b);
 }
 
