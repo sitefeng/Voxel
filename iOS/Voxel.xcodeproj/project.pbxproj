@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0440D11C86C87800D9BFD6 /* FVWirelessSetLEDsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0440D01C86C87800D9BFD6 /* FVWirelessSetLEDsMessage.swift */; };
+		AA0440D31C86CC2A00D9BFD6 /* FVUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0440D21C86CC2A00D9BFD6 /* FVUtility.swift */; };
 		AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */; };
 		AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */; };
 		AA22E8A41C3AF4230030CC83 /* FVBrushPaletteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */; };
@@ -22,12 +24,9 @@
 		AA22E8C01C41B7260030CC83 /* FVSetLEDsColorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */; };
 		AA22E8D31C4C15AF0030CC83 /* FVVoxel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8D21C4C15AF0030CC83 /* FVVoxel.swift */; };
 		AA22E8E61C4C26B80030CC83 /* FVConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */; };
-		AA22E8E81C4C2B830030CC83 /* FVWirelessMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */; };
 		AA22E8EA1C4C2B8D0030CC83 /* FVWirelessMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */; };
-		AA22E8ED1C4C32620030CC83 /* FVWirelessConnectionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */; };
 		AA22E8EF1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */; };
 		AA22E8F11C4C328B0030CC83 /* FVWirelessImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */; };
-		AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */; };
 		AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */; };
 		AA6F5B041C2C9D8C00DB156C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */; };
 		AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B0A1C2C9D8C00DB156C /* Voxel.xcdatamodeld */; };
@@ -92,6 +91,8 @@
 /* Begin PBXFileReference section */
 		5B6635A8B48168166EB2071B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		83C5C0D167A1469FA1EDC99D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0440D01C86C87800D9BFD6 /* FVWirelessSetLEDsMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessSetLEDsMessage.swift; sourceTree = "<group>"; };
+		AA0440D21C86CC2A00D9BFD6 /* FVUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVUtility.swift; sourceTree = "<group>"; };
 		AA22E89E1C3A5DBB0030CC83 /* FVNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVNavigationController.swift; sourceTree = "<group>"; };
 		AA22E8A11C3AF4230030CC83 /* FVBrushPaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVBrushPaletteViewController.swift; sourceTree = "<group>"; };
 		AA22E8A21C3AF4230030CC83 /* FVBrushPaletteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVBrushPaletteViewController.xib; sourceTree = "<group>"; };
@@ -107,12 +108,9 @@
 		AA22E8BE1C41B7260030CC83 /* FVSetLEDsColorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSetLEDsColorViewController.xib; sourceTree = "<group>"; };
 		AA22E8D21C4C15AF0030CC83 /* FVVoxel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVVoxel.swift; sourceTree = "<group>"; };
 		AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVConnectionManager.swift; sourceTree = "<group>"; };
-		AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessMessageResponse.swift; sourceTree = "<group>"; };
 		AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessMessage.swift; sourceTree = "<group>"; };
-		AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessConnectionMessage.swift; sourceTree = "<group>"; };
 		AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessChangeSettingsMessage.swift; sourceTree = "<group>"; };
 		AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageMessage.swift; sourceTree = "<group>"; };
-		AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVWirelessImageSeriesMessage.swift; sourceTree = "<group>"; };
 		AA22E8F61C4C767F0030CC83 /* FVPatternAbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVPatternAbstractViewController.swift; sourceTree = "<group>"; };
 		AA6F5B001C2C9D8C00DB156C /* Voxel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voxel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6F5B031C2C9D8C00DB156C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,11 +211,9 @@
 			children = (
 				AA22E8E51C4C26B80030CC83 /* FVConnectionManager.swift */,
 				AA22E8E91C4C2B8D0030CC83 /* FVWirelessMessage.swift */,
-				AA22E8EC1C4C32620030CC83 /* FVWirelessConnectionMessage.swift */,
 				AA22E8EE1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift */,
+				AA0440D01C86C87800D9BFD6 /* FVWirelessSetLEDsMessage.swift */,
 				AA22E8F01C4C328B0030CC83 /* FVWirelessImageMessage.swift */,
-				AA22E8F21C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift */,
-				AA22E8E71C4C2B830030CC83 /* FVWirelessMessageResponse.swift */,
 			);
 			name = "Wireless Connection";
 			sourceTree = "<group>";
@@ -298,6 +294,7 @@
 				AA6F5B361C2CAF5000DB156C /* HNGlobal.swift */,
 				AA6F5B4C1C2D033E00DB156C /* HNColor.swift */,
 				AA6F5B3A1C2CAF5A00DB156C /* HNString.swift */,
+				AA0440D21C86CC2A00D9BFD6 /* FVUtility.swift */,
 			);
 			name = Convenience;
 			sourceTree = "<group>";
@@ -599,6 +596,7 @@
 				AA6F5B591C2D061900DB156C /* FVHomeViewController.swift in Sources */,
 				AA22E8F11C4C328B0030CC83 /* FVWirelessImageMessage.swift in Sources */,
 				AA6F5B441C2CAF6C00DB156C /* HNDrawerButton.swift in Sources */,
+				AA0440D11C86C87800D9BFD6 /* FVWirelessSetLEDsMessage.swift in Sources */,
 				AA6F5B691C2D06A800DB156C /* FVCustomDrawViewController.swift in Sources */,
 				AA6F5B4D1C2D033E00DB156C /* HNColor.swift in Sources */,
 				AA22E8BB1C41B6D40030CC83 /* FVSetLEDsModuleViewController.swift in Sources */,
@@ -607,7 +605,6 @@
 				AA6F5B371C2CAF5000DB156C /* HNGlobal.swift in Sources */,
 				AA22E8D31C4C15AF0030CC83 /* FVVoxel.swift in Sources */,
 				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
-				AA22E8F31C4C32960030CC83 /* FVWirelessImageSeriesMessage.swift in Sources */,
 				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
 				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
 				AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */,
@@ -615,14 +612,13 @@
 				AA22E8F71C4C767F0030CC83 /* FVPatternAbstractViewController.swift in Sources */,
 				AA22E8A31C3AF4230030CC83 /* FVBrushPaletteViewController.swift in Sources */,
 				AA22E89F1C3A5DBB0030CC83 /* FVNavigationController.swift in Sources */,
+				AA0440D31C86CC2A00D9BFD6 /* FVUtility.swift in Sources */,
 				AA6F5B771C2D15D400DB156C /* FVPreloadedImagesViewController.swift in Sources */,
 				AA22E8EF1C4C327F0030CC83 /* FVWirelessChangeSettingsMessage.swift in Sources */,
 				AA22E8AB1C4191A00030CC83 /* FVSetLEDsViewController.swift in Sources */,
 				AA22E8EA1C4C2B8D0030CC83 /* FVWirelessMessage.swift in Sources */,
 				AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */,
-				AA22E8E81C4C2B830030CC83 /* FVWirelessMessageResponse.swift in Sources */,
 				AA22E8A71C4191200030CC83 /* FVSolidColorViewController.swift in Sources */,
-				AA22E8ED1C4C32620030CC83 /* FVWirelessConnectionMessage.swift in Sources */,
 				AA6F5B0C1C2C9D8C00DB156C /* Voxel.xcdatamodeld in Sources */,
 				AA22E8E61C4C26B80030CC83 /* FVConnectionManager.swift in Sources */,
 				AA6F5B4B1C2D012000DB156C /* HNMainNavigationController.swift in Sources */,

@@ -9,20 +9,28 @@
 import UIKit
 
 public enum FVWirelessMessageType: Int {
-    case Connection = 0x01
-    case ChangeSettings = 0x02
-    case Image = 0x03
-    case ImageSeries = 0x04
+    case None = 0
+    case ChangeSettings
+    case SetLEDs
+    case Image
+    
 }
+
 
 // ABSTRACT class
 class FVWirelessMessage: NSObject {
     
-    private var messageType: FVWirelessMessageType
+    internal var messageType: FVWirelessMessageType
     
     override init() {
-        messageType = .Connection
+        messageType = .None
         super.init()
+    }
+    
+    
+    func transmitDictionary() -> [String: String] {
+        assertionFailure("Message transmit function Not Implemented by Child")
+        return [String: String]()
     }
     
 }

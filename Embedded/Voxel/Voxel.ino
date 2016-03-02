@@ -1,6 +1,8 @@
 #include <ESP8266WiFi.h>
-#include "FS.h"
-
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+#include <FS.h>
+#include <ArduinoJson.h>
 
 //////////////////////
 // Definitions //
@@ -34,6 +36,8 @@ int numModules = 5; // TODO
 // Private Global Variables  //
 ///////////////////////////////
 volatile bool shouldStart = true;
+StaticJsonBuffer<1000> jsonBuffer;
+char jsonRequest[1000];
 
 unsigned char *bitmap = NULL;
 int imageWidth = 0;
@@ -44,7 +48,7 @@ char base64Image[base64ImageLength];
 
 
 //192.168.4.1/
-WiFiServer server(80);
+ESP8266WebServer server(80);
 
 void setup() 
 {
@@ -93,75 +97,52 @@ void setupWiFi()
     AP_NameChar[i] = AP_NameString.charAt(i);
 
   WiFi.softAP(AP_NameChar, WiFiAPPSK);
+  server.on("/1/", HTTP_GET, changeSettings);
+  server.on("/2/", HTTP_GET, setLEDs);
+//  server.on("/3/", HTTP_POST, [](){ readImageRequest(); });
+  server.on("/3/", HTTP_POST, readImageRequest);
+  server.onNotFound(handleNotFound);
+  
+  server.begin();
 }
-
-
-String base64_chars = 
-             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-             "abcdefghijklmnopqrstuvwxyz"
-             "0123456789+/";
-
-
-bool is_base64(char c) {
-  return (isalnum(c) || (c == '+') || (c == '/'));
-}
-
-
-unsigned char* base64_decode(String encoded_string, size_t imageSize) {
-  int in_len = encoded_string.length();
-  int i = 0;
-  int j = 0;
-  int in_ = 0;
-  char char_array_4[4], char_array_3[3];
-  unsigned char *ret = (unsigned char*)malloc(imageSize*3);
-
-  int currPos = 0;
-  while (in_len-- && ( encoded_string[in_] != '=') && is_base64(encoded_string[in_])) {
-    char_array_4[i++] = encoded_string[in_]; in_++;
-    if (i ==4) {
-      for (i = 0; i <4; i++)
-        char_array_4[i] = base64_chars.indexOf(char_array_4[i]);
-
-      char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
-      char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
-      char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
-
-      for (i = 0; (i < 3); i++) {
-          ret[currPos] = char_array_3[i];
-          currPos++;
-      }
-      i = 0;
-    }
-  }
-
-  if (i) {
-    for (j = i; j <4; j++)
-      char_array_4[j] = 0;
-
-    for (j = 0; j <4; j++)
-      char_array_4[j] = base64_chars.indexOf(char_array_4[j]);
-
-    char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
-    char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
-    char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
-
-    for (j = 0; (j < i - 1); j++) {
-      ret[currPos] = char_array_3[j];
-      currPos++;
-    }
-  }
-
-  return ret;
-}
-
 
 
 // ***********************************************
 // Repeating Loop Function
-void loop() 
-{
+void loop() {
+  server.handleClient();
+
+  if (shouldStart == true) {
+    for (int r=0; r<numRepeats; r++) {
+          displayImage();
+    }
+    shouldStart = false;
+  }
+}
+
+
+void changeSettings() {
+  WiFiClient client = server.client();
+  if (!client) {
+    return;
+  }
+
+  Serial.print("Not Handled");
+}
+
+void setLEDs() {
+  WiFiClient client = server.client();
+  if (!client) {
+    return;
+  }
+
+  Serial.print("Not Handled");
+  
+}
+
+void readImageRequest() {
   // Check if a client has connected
-  WiFiClient client = server.available();
+  WiFiClient client = server.client();
   if (!client) {
     return;
   }
@@ -173,88 +154,54 @@ void loop()
   
   // Read the first line of the request
   //Request String
-  String commandStr = client.readStringUntil('\r');
-  client.flush();
+  if (server.method() == HTTP_GET) {
+    Serial.print("Should not be get");
+    return;
+  }
 
-  int startPos = commandStr.indexOf("/") + 1;
-  commandStr.remove(0, startPos);
+  String imgString = "";
+    
+  for (int i=0; i<server.args(); i++) {
+    String message = "<Message> NAME:"+server.argName(i) + "VALUE:" + server.arg(i) + "\n";
+    Serial.println(server.arg(i));
 
-  int endPos = commandStr.indexOf(" ");
-  commandStr.remove(endPos);
+    String argName = server.argName(i);
+    if (argName == "plain") {
+      
+      server.arg(i).toCharArray(jsonRequest, 1000);
+      JsonObject& root = jsonBuffer.parseObject(jsonRequest);
 
-  String commandId = commandStr.substring(0, 1);
-  imageWidth = commandStr.substring(1, 5).toInt();
-  imageHeight = commandStr.substring(5, 9).toInt();
-  commandStr.remove(0, 9);
-  Serial.print(imageWidth);
-  Serial.print(", ");
-  Serial.println(imageHeight);
-  Serial.print("imageBase64: ");
-  Serial.println(commandStr);
-  
-  size_t decodedLength = 0;
-  commandStr.toCharArray(base64Image, base64ImageLength);
-//  bitmap = base64_decode(base64Image, commandStr.length(), &decodedLength);
+      imageWidth = root["width"];
+      imageHeight = root["height"];
+      const char* imgChar = root["data"];
+
+      Serial.println("Ok");
+      Serial.println(imageHeight);
+      delay(100);
+
+      imgString = String(imgChar);
+      Serial.println(imageWidth);
+      Serial.println(imageHeight);
+      Serial.println("Ok");
+      delay(100);
+    } 
+
+  }
+
+  imgString.toCharArray(base64Image, base64ImageLength);
   bitmap = base64_decode(base64Image, imageWidth*imageHeight);
   
   // Prepare the response. Start with the common header:
   String s = "HTTP/1.1 200 OK\r\n";
   s += "Content-Type: text/html\r\n\r\n";
   s += "<!DOCTYPE HTML>\r\n<html>\r\n";
-  
   s += "<h1>Fusion Voxel</h1>\r\n";
-  s += "CommandId:";
-  s += commandId;
-  s += "<hr/>";
-  
-  s += "<br/>\n";
-  s += "ImageWidth:";
-  s += String(imageWidth);
-  s += "<br/>\n";
-  s += "ImageHeight:";
-  s += String(imageHeight);
-  s += "<br/>\n";
-  
+  s += "imageWidth:";
+  s += imageWidth;
   s += "</html>\n";
 
   // Send the response to the client
   client.print(s);
-  delay(10);
-  Serial.println("Client disonnected");
-
-  // Render the Actual Image
-  if (commandId.equals("1")) {
-    error("Not Implemented!");
-    
-  } else if (commandId.equals("2")) {
-    error("Not Implemented!");
-    
-  } else if (commandId.equals("3")) {
-    for(int i=0; i<imageWidth*imageHeight*3; i++) {
-      const char currByte = bitmap[i];
-      Serial.print(currByte);
-    }
-    Serial.println("\n**********");
-    
-    while(true) {
-      while (!shouldStart) {
-        WiFiClient client = server.available();
-        if (client) {
-          Serial.println("While loop RETURNED");
-          return;
-        }
-        delay(50);
-      }
-
-      for (int r=0; r<numRepeats; r++) {
-        displayImage();
-      }
-      shouldStart = false;
-    }
-    
-  } else {
-    error("Command not supported");
-  }
   
 }
 
@@ -312,6 +259,87 @@ void clearLEDModules() {
 
       pushLEDColor(r,g,b);
   }
+}
+
+
+// ************
+// Handle not found
+void handleNotFound(){
+
+  String message = "Request Not Found\n\n";
+  message += "URI: ";
+  message += server.uri();
+  message += "\nMethod: ";
+  message += (server.method() == HTTP_GET)?"GET":"POST";
+  message += "\nArguments: ";
+  message += server.args();
+  message += "\n";
+  for (uint8_t i=0; i<server.args(); i++){
+    message += " NAME:"+server.argName(i) + "\n VALUE:" + server.arg(i) + "\n";
+  }
+  server.send(404, "text/plain", message);
+  Serial.println(message);
+}
+
+
+// **************************
+// Base64
+String base64_chars = 
+             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+             "abcdefghijklmnopqrstuvwxyz"
+             "0123456789+/";
+
+
+bool is_base64(char c) {
+  return (isalnum(c) || (c == '+') || (c == '/'));
+}
+
+
+unsigned char* base64_decode(String encoded_string, size_t imageSize) {
+  int in_len = encoded_string.length();
+  int i = 0;
+  int j = 0;
+  int in_ = 0;
+  char char_array_4[4], char_array_3[3];
+  unsigned char *ret = (unsigned char*)malloc(imageSize*3);
+
+  int currPos = 0;
+  while (in_len-- && ( encoded_string[in_] != '=') && is_base64(encoded_string[in_])) {
+    char_array_4[i++] = encoded_string[in_]; in_++;
+    if (i ==4) {
+      for (i = 0; i <4; i++)
+        char_array_4[i] = base64_chars.indexOf(char_array_4[i]);
+
+      char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
+      char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
+      char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
+
+      for (i = 0; (i < 3); i++) {
+          ret[currPos] = char_array_3[i];
+          currPos++;
+      }
+      i = 0;
+    }
+  }
+
+  if (i) {
+    for (j = i; j <4; j++)
+      char_array_4[j] = 0;
+
+    for (j = 0; j <4; j++)
+      char_array_4[j] = base64_chars.indexOf(char_array_4[j]);
+
+    char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
+    char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
+    char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
+
+    for (j = 0; (j < i - 1); j++) {
+      ret[currPos] = char_array_3[j];
+      currPos++;
+    }
+  }
+
+  return ret;
 }
 
 

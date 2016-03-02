@@ -27,6 +27,8 @@ public enum FVVoxelConfigurations: Int {
 
 
 class FVVoxel: NSObject {
+    
+    let numLEDsPerModule = 57
 
     private(set) var configuration: FVVoxelConfigurations
     
@@ -52,6 +54,29 @@ class FVVoxel: NSObject {
         self.connected = true
     
         super.init()
+    }
+    
+    func numLEDs() -> Int {
+        return numLEDsPerModule * numModules()
+    }
+    
+    func numModules() -> Int {
+        var modules = 0
+        switch(self.configuration) {
+            case .HorizontalOne, .VerticalOne:
+                modules = 1
+            case .HorizontalLeftTwo, .HorizontalRightTwo, .VerticalTwo:
+                modules = 2
+            case .HorizontalThree, .VerticalThree:
+                modules = 3
+            case .HorizontalLeftFour, .HorizontalRightFour:
+                modules = 4
+            case .HorizontalFive:
+                modules = 5
+            default:
+                modules = 0
+        }
+        return modules
     }
     
     

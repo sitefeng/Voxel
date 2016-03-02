@@ -38,14 +38,14 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
     
-        alertController = UIAlertController(title: "Saved", message: "Your drawing has been successfully saved to the photo album", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController = UIAlertController(title: "Error Occured", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         
-        alertController = UIAlertController(title: "Saved", message: "Your drawing has been successfully saved to the photo album", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController = UIAlertController(title: "Error Occured", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
         super.init(coder: aDecoder)
     }
@@ -55,6 +55,8 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
         super.viewDidLoad()
         
         self.title = "Custom Draw"
+        
+        addBlackBackgroundToCanvas()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -74,7 +76,20 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
     
     // MARK: Navigation Callback Methods
     override func sendButtonPressed() {
-        return
+//        let image = mainImageView.image!
+        let image = UIImage(named: "testBlackWhite")!
+        
+        let message = FVWirelessImageMessage(image: image)
+        FVConnectionManager.sharedManager().sendMessageToVoxel(message) { (response) -> Void in
+            dispatch_async(dispatch_get_main_queue(),{
+                if response == .Success {
+                    self.showAlert("Success", message: "Your image has been sent to Voxel")
+                } else {
+                    self.showAlert("Error", message: "Send Failed. Code: \(response.rawValue)")
+                }
+            })
+        }
+        
     }
     
         
@@ -324,7 +339,27 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
             return
         }
         
-        // Add black background before saving
+        UIImageWriteToSavedPhotosAlbum(mainImageView.image!,nil,nil,nil)
+        
+        showAlert("Saved", message: "Your drawing has been successfully saved to the photo album")
+    }
+    
+    // MARK: Misc
+    
+    func showAlert(title: String, message: String) {
+        alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
+
+        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dismissAlert", userInfo: nil, repeats: false)
+        self.presentViewController(self.alertController, animated: true, completion: nil)
+    }
+    
+    func dismissAlert() {
+        self.alertController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    func addBlackBackgroundToCanvas() {
         UIGraphicsBeginImageContext(self.mainImageView.frame.size)
         let path = UIBezierPath(rect: self.mainImageView.bounds)
         UIColor.blackColor().setFill()
@@ -334,16 +369,6 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
         
         let imageWithBlackBackground = UIGraphicsGetImageFromCurrentImageContext()
         mainImageView.image = imageWithBlackBackground
-        
-        UIImageWriteToSavedPhotosAlbum(mainImageView.image!,nil,nil,nil)
-        
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dismissAlert", userInfo: nil, repeats: false)
-        self.presentViewController(self.alertController, animated: true, completion: nil)
-    }
-    
-    // MARK: Dismiss Alert
-    func dismissAlert() {
-        self.alertController.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
