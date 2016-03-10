@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MobileCoreServices
+
 
 class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -14,8 +16,8 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
     
     let kCollectionViewCellReuseIdentifier = "kCollectionViewCellReuseIdentifier"
     
-    let cellTitles = ["Solid Color", "Set LEDs", "Load Media", "2D Draw", "Load STL"]
-    let cellImageNames = ["solidColor", "setLEDs", "loadMedia", "draw2D", "draw3D"]
+    let cellTitles = ["Solid Color", "Set LEDs", "Load Media", "2D Draw"]
+    let cellImageNames = ["solidColor", "setLEDs", "loadMedia", "draw2D"]
     
     var cellWidth: CGFloat = 0
     var cellLabelHeight: CGFloat = 29
@@ -71,7 +73,8 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
         
         switch indexPath.row {
         case 0: // Solid Color
-            let mainViewController: FVHomeViewController! = FVHomeViewController(nibName:"FVHomeViewController", bundle: nil)
+            let solidColorVC: FVSolidColorViewController! = FVSolidColorViewController(nibName:"FVSolidColorViewController", bundle: nil)
+            self.presentViewController(solidColorVC, animated: true, completion: nil)
   
             
         case 1: // Set LEDs
@@ -84,6 +87,7 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePicker.mediaTypes = [kUTTypeImage as String]
             self.presentViewController(imagePicker, animated: true, completion: nil)
      
             
@@ -94,27 +98,25 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
             
             self.presentViewController(navController, animated: true, completion: nil)
             
-        case 4: // 3D STL
-            let cameraVC = FVCameraViewController(nibName: "FVCameraViewController", bundle: NSBundle.mainBundle())
-            
         default:
             print("No Action Implemented")
             
         }
     
-
         
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.dismissViewControllerAnimated(false) { () -> Void in
+
+            let loadImageVC = FVLoadImageViewController(nibName: "FVLoadImageViewController", bundle:  nil)
+            loadImageVC.loadedImage = image
+            let navController = FVNavigationController(rootViewController: loadImageVC)
+            self.presentViewController(navController, animated: false, completion: nil)
+        }
+        
+    }
    
 }

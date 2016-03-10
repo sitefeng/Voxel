@@ -13,6 +13,9 @@ class FVSettingsTableViewCell: UITableViewCell {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var sideLabel: UILabel!
     
+    var indexPath: NSIndexPath?
+    weak var settingsController: FVSettingsViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -25,9 +28,10 @@ class FVSettingsTableViewCell: UITableViewCell {
         let value = sender.value
         print("sliderValue: \(value)")
         
+        if (indexPath != nil && settingsController != nil) {
+            settingsController!.sliderValueChangedForTableCell(indexPath!, newValue: value)
+        }
+
     }
-    
-    
-    
     
 }

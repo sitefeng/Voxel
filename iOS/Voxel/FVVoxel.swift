@@ -10,7 +10,7 @@ import UIKit
 
 public enum FVVoxelConfigurations: Int {
     
-    case Unconfigured
+    case Unconfigured = 0
     
     // Horizontal Configurations
     case HorizontalOne
@@ -28,9 +28,7 @@ public enum FVVoxelConfigurations: Int {
 
 class FVVoxel: NSObject {
     
-    let numLEDsPerModule = 57
-
-    private(set) var configuration: FVVoxelConfigurations
+    static let numLEDsPerModule = 57
     
     private(set) var serialNumber: String
     private(set) var name: String
@@ -47,7 +45,6 @@ class FVVoxel: NSObject {
 //        self.connected = false
         
         // TODO: Creating a fake voxel upon initialization
-        self.configuration = .HorizontalFive
         self.serialNumber = "H4Y7D2"
         self.name = "Voxel-H4Y7"
         self.firmwareVersion = 1.0
@@ -57,12 +54,12 @@ class FVVoxel: NSObject {
     }
     
     func numLEDs() -> Int {
-        return numLEDsPerModule * numModules()
+        return FVVoxel.numLEDsPerModule * numModules()
     }
     
     func numModules() -> Int {
         var modules = 0
-        switch(self.configuration) {
+        switch(self.configuration()) {
             case .HorizontalOne, .VerticalOne:
                 modules = 1
             case .HorizontalLeftTwo, .HorizontalRightTwo, .VerticalTwo:
@@ -77,6 +74,14 @@ class FVVoxel: NSObject {
                 modules = 0
         }
         return modules
+    }
+    
+    
+    func configuration() -> FVVoxelConfigurations {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let configInt = defaults.integerForKey(FVGlobal.kDefaultsVoxelTypeKey)
+        
+        return FVVoxelConfigurations(rawValue: configInt)!
     }
     
     

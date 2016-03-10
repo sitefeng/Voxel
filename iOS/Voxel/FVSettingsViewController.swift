@@ -16,10 +16,9 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
     let kGeneralTableViewCellIdentifier = "kGeneralTableViewCellIdentifier"
     let kSettingsTableViewHeaderIdentifier = "kSettingsTableViewHeaderIdentifier"
     
-    let sectionTitles = ["Start Delay", "LED Frequency", "LED Brightness", "Sweep Direction"]
+    let sectionTitles = ["Voxel Configuration", "Start Delay", "LED Frequency", "LED Brightness"]
     
-    let sectionNumRows = [1, 1, 1, 2]
-    
+    let sectionNumRows = [1, 1, 1, 1, 2]
     
     
     override func viewDidLoad() {
@@ -27,8 +26,6 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
 
         self.title = "Settings"
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
         self.tableView.registerNib(UINib(nibName: "FVSettingsTableViewCell", bundle: nil), forCellReuseIdentifier: kSettingsTableViewCellIdentifier)
         self.tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kSettingsTableViewHeaderIdentifier)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kGeneralTableViewCellIdentifier)
@@ -48,20 +45,34 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var tableCell: UITableViewCell!
         
-        if indexPath.section <= 2 ||
-           indexPath.section >= 4 {
+        if indexPath.section == 0 {
+            tableCell = self.tableView.dequeueReusableCellWithIdentifier(kGeneralTableViewCellIdentifier)
+            tableCell.textLabel?.text = "Voxel Type"
+            tableCell.textLabel?.textColor = UIColor.whiteColor()
+            
+        } else {
             
             let cell = self.tableView.dequeueReusableCellWithIdentifier(kSettingsTableViewCellIdentifier) as! FVSettingsTableViewCell
-            
             cell.sideLabel.text = ""
-            
+            cell.indexPath = indexPath
+            cell.settingsController = self
             tableCell = cell
-            
-        } else if indexPath.section == 3 {
-            tableCell = self.tableView.dequeueReusableCellWithIdentifier(kGeneralTableViewCellIdentifier)
         }
         
+        tableCell.backgroundColor = UIColor.clearColor()
+        
         return tableCell
+    }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.isEqual(NSIndexPath(forRow: 0, inSection: 0)) {
+            let typeController = FVVoxelTypePopupViewController()
+            
+            self.showChildViewController(typeController)
+        }
     }
     
     
@@ -71,14 +82,41 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
     
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.tableView.dequeueReusableHeaderFooterViewWithIdentifier(kSettingsTableViewHeaderIdentifier) as! FVSettingsTableHeader
+        let nibViews = NSBundle.mainBundle().loadNibNamed("FVSettingsTableHeader", owner: self, options: nil)
+        let headerView = nibViews.first as! FVSettingsTableHeader
         
-        header.label.text = sectionTitles[section]
+        headerView.label.text = sectionTitles[section]
         
-        return header
+        return headerView
     }
     
     
+    // Cell Callback
+    func sliderValueChangedForTableCell(indexPath: NSIndexPath, newValue: Float) {
+        let tableCell = tableView.cellForRowAtIndexPath(indexPath) as! FVSettingsTableViewCell
+        
+        let defaults = NSUserDefaults.standardUserDefaults();
+        if (indexPath.section == 1 ) {
+            let delay = newValue * 20
+            tableCell.sideLabel.text = String(format: "%.01f", delay)
+            
+            defaults.setFloat(delay, forKey: FVGlobal.kDefaultsVoxelDelayKey)
+            
+        } else if (indexPath.section == 2) {
+            let freq = 2 + newValue * 28
+            tableCell.sideLabel.text = String(format: "%.0f", freq)
+            defaults.setFloat(freq, forKey: FVGlobal.kDefaultsVoxelFrequencyKey)
+            
+        } else if (indexPath.section == 3) {
+            let brightness = 2 + newValue * 100
+            tableCell.sideLabel.text = String(format: "%.0f%", brightness)
+            defaults.setFloat(brightness, forKey: FVGlobal.kDefaultsVoxelBrightnessKey)
+        }
+        
+    }
+    
+    
+    // MARK: Other Methods
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

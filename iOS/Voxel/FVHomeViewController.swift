@@ -16,7 +16,7 @@ class FVHomeViewController: HNAbstractViewController, UICollectionViewDataSource
     let collectionViewCellReuseIdentifier = "collectionViewCellReuseIdentifier"
     
     let cellImageNames = ["myPatterns", "preloadedPatterns", "connection", "cameraSLR", "settings"]
-    let cellTitles = ["My Patterns", "Voxel Patterns", "Connection", "Night Camera", "Settings"]
+    let cellTitles = ["My Patterns", "Voxel Patterns", "Connection Help", "Night Camera", "Settings"]
     
     let numPaintings = 5
     

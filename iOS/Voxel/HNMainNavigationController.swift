@@ -62,10 +62,10 @@ class HNMainNavigationController: FVNavigationController, HNDrawerViewController
             preloadedPatternVC.delegate = self
             self.viewControllers = [preloadedPatternVC]
             
-        case 3: break // Connection
-//            let connectionVC = FVConnectionViewController(nibName: "FVConnectionViewController", bundle: NSBundle.mainBundle())
-//            connectionVC.delegate = self
-//            self.viewControllers = [connectionVC]
+        case 3: // Connection
+            let connectionVC = FVConnectionViewController(nibName: "FVConnectionViewController", bundle: NSBundle.mainBundle())
+            connectionVC.delegate = self
+            self.viewControllers = [connectionVC]
             
             
         case 4: // Camera

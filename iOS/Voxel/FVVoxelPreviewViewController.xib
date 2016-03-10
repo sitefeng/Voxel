@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVVoxelPreviewViewController" customModule="Voxel" customModuleProvider="target">
@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="voxelHandle3" translatesAutoresizingMaskIntoConstraints="NO" id="Mn0-CI-N8S">
-                    <rect key="frame" x="176" y="47" width="37" height="128"/>
+                    <rect key="frame" x="176" y="47" width="37" height="120"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="37" id="yum-k9-DVl"/>
                     </constraints>
@@ -61,7 +61,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Mn0-CI-N8S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3ez-BA-oWA"/>
-                <constraint firstAttribute="bottom" secondItem="Mn0-CI-N8S" secondAttribute="bottom" id="Be7-pk-qfx"/>
+                <constraint firstAttribute="bottom" secondItem="Mn0-CI-N8S" secondAttribute="bottom" constant="8" id="Be7-pk-qfx"/>
                 <constraint firstItem="7Q8-B2-zrn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="FNy-CU-D2X"/>
                 <constraint firstAttribute="bottom" secondItem="AoV-Kz-FTR" secondAttribute="bottom" constant="8" id="Lsv-hE-Tnv"/>
                 <constraint firstAttribute="trailing" secondItem="AoV-Kz-FTR" secondAttribute="trailing" constant="8" id="PUD-q0-hj5"/>

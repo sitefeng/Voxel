@@ -346,19 +346,6 @@ class FVCustomDrawViewController: FVPatternAbstractViewController, FVBrushPalett
     
     // MARK: Misc
     
-    func showAlert(title: String, message: String) {
-        alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Okay", style: .Cancel, handler: nil))
-
-        NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "dismissAlert", userInfo: nil, repeats: false)
-        self.presentViewController(self.alertController, animated: true, completion: nil)
-    }
-    
-    func dismissAlert() {
-        self.alertController.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
     func addBlackBackgroundToCanvas() {
         UIGraphicsBeginImageContext(self.mainImageView.frame.size)
         let path = UIBezierPath(rect: self.mainImageView.bounds)

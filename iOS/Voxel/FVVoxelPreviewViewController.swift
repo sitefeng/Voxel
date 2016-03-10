@@ -12,7 +12,6 @@ import UIKit
 protocol FVVoxelPreviewViewControllerDelegate {
     
     func voxelPreviewController(controller: FVVoxelPreviewViewController, selectedModuleIndex: Int)
-    func numberOfLEDsPerModule() -> Int
     
 }
 
@@ -21,7 +20,14 @@ class FVVoxelPreviewViewController: UIViewController {
 
     // Constants
     let margin = CGFloat(8)
-    let maxHorizontalModules = CGFloat(5)
+    var maxHorizontalModules: Int {
+        let modules = FVConnectionManager.sharedManager().connectedVoxel?.numModules()
+        if modules == nil {
+            return 0
+        } else {
+            return modules!
+        }
+    }
     
     @IBOutlet weak var horizontalPreview: UIImageView!
     @IBOutlet weak var verticalPreview: UIImageView!
@@ -32,25 +38,24 @@ class FVVoxelPreviewViewController: UIViewController {
     
     // Public Var
     var moduleSelectionViewPosition: Int = 0
-    
     var delegate: FVVoxelPreviewViewControllerDelegate?
+    var showModuleSelectionBox = true
+    var numLEDsPerModule = FVVoxel.numLEDsPerModule
     
     // Private Var
-    var moduleColors: [[UIColor]]
+    var moduleColors: [[UIColor]] = []
     
     init?(_ coder: NSCoder? = nil) {
+        
         self.moduleColors = []
-        for _ in 0..<Int(self.maxHorizontalModules) {
-            let colorArray = [UIColor]()
-            
-            self.moduleColors.append(colorArray)
-        }
         
         if let coder = coder {
             super.init(coder: coder)
         } else {
             super.init(nibName: nil, bundle:nil)
         }
+        
+
     }
     
     required convenience init?(coder: NSCoder) {
@@ -64,12 +69,22 @@ class FVVoxelPreviewViewController: UIViewController {
         ledImageView.userInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: "voxelTapped:")
         ledImageView.addGestureRecognizer(tapRecognizer)
-        
     }
     
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        resetView()
+    }
+    
+    
+    func resetView() {
+        
+        for _ in 0..<Int(self.maxHorizontalModules) {
+            let colorArray = [UIColor]()
+            self.moduleColors.append(colorArray)
+        }
         
         let voxelOrNil = FVConnectionManager.sharedManager().connectedVoxel
         guard let voxel = voxelOrNil else {
@@ -79,14 +94,12 @@ class FVVoxelPreviewViewController: UIViewController {
         
         // Setup module selection view
         self.setupModuleSelectionView(voxel)
-        
         self.drawLEDFrame()
         
         // Fill in default black color
-        let numLEDsPerModule = self.delegate?.numberOfLEDsPerModule()
         var ledColors: [UIColor] = []
         
-        for _ in 0 ..< numLEDsPerModule! {
+        for _ in 0 ..< numLEDsPerModule {
             ledColors.append(UIColor.blackColor())
         }
         
@@ -103,7 +116,7 @@ class FVVoxelPreviewViewController: UIViewController {
     func setupModuleSelectionView(voxel: FVVoxel) {
         
         let totalWidth = UIScreen.mainScreen().bounds.size.width - margin*2
-        let width = totalWidth / maxHorizontalModules
+        let width = totalWidth / CGFloat(maxHorizontalModules)
         
         let imageView = UIImageView(image: UIImage(named: "borderLEDModuleSelection"))
         imageView.frame = CGRect(x: margin, y: margin, width: width, height: 35)
@@ -111,7 +124,7 @@ class FVVoxelPreviewViewController: UIViewController {
         self.view.addSubview(imageView)
         self.moduleSelectionView = imageView
 
-        switch(voxel.configuration) {
+        switch(voxel.configuration()) {
             
         case .HorizontalOne:
             moduleSelectionViewPosition = 2
@@ -134,6 +147,8 @@ class FVVoxelPreviewViewController: UIViewController {
         
         self.moveModuleSelectionViewToPosition(moduleSelectionViewPosition, animated: true)
         
+        // Hide if not needed
+        self.moduleSelectionView.hidden = !showModuleSelectionBox
     }
     
     
@@ -204,7 +219,6 @@ class FVVoxelPreviewViewController: UIViewController {
     }
     
     
-    // Array of 57 pixels for the currently selected module
     private func drawLEDColors(array: [UIColor]) {
         
         let totalWidth = UIScreen.mainScreen().bounds.width - 2*margin

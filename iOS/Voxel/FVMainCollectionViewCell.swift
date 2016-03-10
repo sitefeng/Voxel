@@ -18,7 +18,7 @@ class FVMainCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
        
-        self.layer.cornerRadius = CGFloat(HNGlobal.mainCornerRadius)
+        self.layer.cornerRadius = CGFloat(6)
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor(colorType: HNColorTypes.WhiteTransluscent)
     }
