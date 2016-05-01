@@ -17,6 +17,7 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
     let kSettingsTableViewHeaderIdentifier = "kSettingsTableViewHeaderIdentifier"
     
     let sectionTitles = ["Voxel Configuration", "Start Delay", "LED Frequency", "LED Brightness"]
+    let configurationStrings = ["Paint Brush Mode (1)", "Paint Brush Mode (2L)","Paint Brush Mode (2R)","Paint Brush Mode (3)","Paint Brush Mode (4L)", "Paint Brush Mode (4R)", "Paint Brush Mode (5)", "Light Saber Mode (1)", "Light Saber Mode (2)", "Light Saber Mode (3)"]
     
     let sectionNumRows = [1, 1, 1, 1, 2]
     
@@ -29,6 +30,7 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
         self.tableView.registerNib(UINib(nibName: "FVSettingsTableViewCell", bundle: nil), forCellReuseIdentifier: kSettingsTableViewCellIdentifier)
         self.tableView.registerClass(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: kSettingsTableViewHeaderIdentifier)
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kGeneralTableViewCellIdentifier)
+        
         
     }
 
@@ -47,13 +49,22 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
         
         if indexPath.section == 0 {
             tableCell = self.tableView.dequeueReusableCellWithIdentifier(kGeneralTableViewCellIdentifier)
-            tableCell.textLabel?.text = "Voxel Type"
+            
+            var voxelConfig = FVConnectionManager.sharedManager().connectedVoxel?.configuration()
+            if voxelConfig == nil {
+                voxelConfig = .HorizontalOne
+            }
+            
+            tableCell.textLabel?.text = "Voxel Type: " + configurationStrings[voxelConfig!.rawValue]
             tableCell.textLabel?.textColor = UIColor.whiteColor()
             
         } else {
             
             let cell = self.tableView.dequeueReusableCellWithIdentifier(kSettingsTableViewCellIdentifier) as! FVSettingsTableViewCell
-            cell.sideLabel.text = ""
+            
+            cell.slider.value = self.retrieveValueFromUserDefaults(indexPath)
+            cell.sideLabel.text = sideLabelForCell(indexPath, value: cell.slider.value)
+            
             cell.indexPath = indexPath
             cell.settingsController = self
             tableCell = cell
@@ -96,25 +107,58 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
         let tableCell = tableView.cellForRowAtIndexPath(indexPath) as! FVSettingsTableViewCell
         
         let defaults = NSUserDefaults.standardUserDefaults();
-        if (indexPath.section == 1 ) {
-            let delay = newValue * 20
-            tableCell.sideLabel.text = String(format: "%.01f", delay)
+        
+        switch(indexPath.section) {
+        case 1:
+            defaults.setFloat(newValue, forKey: FVGlobal.kDefaultsVoxelDelayKey)
+        case 2:
+            defaults.setFloat(newValue, forKey: FVGlobal.kDefaultsVoxelFrequencyKey)
+        case 3:
+            defaults.setFloat(newValue, forKey: FVGlobal.kDefaultsVoxelBrightnessKey)
+        default:
+            assert(false)
             
-            defaults.setFloat(delay, forKey: FVGlobal.kDefaultsVoxelDelayKey)
-            
-        } else if (indexPath.section == 2) {
-            let freq = 2 + newValue * 28
-            tableCell.sideLabel.text = String(format: "%.0f", freq)
-            defaults.setFloat(freq, forKey: FVGlobal.kDefaultsVoxelFrequencyKey)
-            
-        } else if (indexPath.section == 3) {
-            let brightness = 2 + newValue * 100
-            tableCell.sideLabel.text = String(format: "%.0f%", brightness)
-            defaults.setFloat(brightness, forKey: FVGlobal.kDefaultsVoxelBrightnessKey)
         }
         
+        tableCell.sideLabel.text = sideLabelForCell(indexPath, value: newValue)
     }
     
+    func sideLabelForCell(indexPath: NSIndexPath, value: Float) -> String {
+        if (indexPath.section == 1 ) {
+            let delay = value * 20
+            return String(format: "%.01f", delay)
+            
+        } else if (indexPath.section == 2) {
+            let freq = 2 + value * 28
+            return String(format: "%.0f", freq)
+            
+        } else if (indexPath.section == 3) {
+            let brightness = 2 + value * 100
+            return String(format: "%.0f", brightness)
+        } else {
+            assert(false)
+        }
+
+    }
+    
+    func retrieveValueFromUserDefaults(indexPath: NSIndexPath) -> Float {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var value: Float = 0.0
+        
+        switch(indexPath.section) {
+        case 1:
+            value = defaults.floatForKey(FVGlobal.kDefaultsVoxelDelayKey)
+        case 2:
+            value = defaults.floatForKey(FVGlobal.kDefaultsVoxelFrequencyKey)
+        case 3:
+            value = defaults.floatForKey(FVGlobal.kDefaultsVoxelBrightnessKey)
+        default:
+            assert(false)
+        }
+        
+        return value
+    }
     
     // MARK: Other Methods
     

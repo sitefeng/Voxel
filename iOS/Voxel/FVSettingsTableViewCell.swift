@@ -19,15 +19,13 @@ class FVSettingsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.slider.addTarget(self, action: "sliderValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        self.slider.addTarget(self, action: #selector(FVSettingsTableViewCell.sliderValueChanged(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
 
 
     func sliderValueChanged(sender: UISlider) {
         
         let value = sender.value
-        print("sliderValue: \(value)")
-        
         if (indexPath != nil && settingsController != nil) {
             settingsController!.sliderValueChangedForTableCell(indexPath!, newValue: value)
         }

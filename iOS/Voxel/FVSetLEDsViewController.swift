@@ -15,8 +15,8 @@ class FVSetLEDsViewController: FVPatternAbstractViewController, FVVoxelPreviewVi
     @IBOutlet weak var setLEDsColorView: UIView!
     
     // Constants
-    let numberOfModules = 5
-    let numLEDsPerModule = 57
+    var numberOfModules = 0
+    let numLEDsPerModule = FVVoxel.numLEDsPerModule
     
     // Public Variables
     private(set) var currSelectedModule = 0
@@ -37,6 +37,8 @@ class FVSetLEDsViewController: FVPatternAbstractViewController, FVVoxelPreviewVi
         voxelPreviewVC.view.frame = self.voxelPreview.bounds
         voxelPreviewVC.willMoveToParentViewController(self)
         self.voxelPreview.addSubview(voxelPreviewVC.view)
+        
+        numberOfModules = FVConnectionManager.sharedManager().connectedVoxel!.numModules()
         
         // Setup LED Module Painting section
         for i in 1...numberOfModules {

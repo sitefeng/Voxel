@@ -68,6 +68,7 @@
 		AA6F5B871C2D30D800DB156C /* FVMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B851C2D30D800DB156C /* FVMainCollectionViewCell.swift */; };
 		AA6F5B881C2D30D800DB156C /* FVMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */; };
 		AA6F5B951C2E024200DB156C /* FVBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6F5B941C2E024200DB156C /* FVBannerView.m */; };
+		AAAC10D01CADD2F000D9670A /* FVHueSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC10CF1CADD2F000D9670A /* FVHueSlider.swift */; };
 		AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */; };
 		AAD596531C34CDF4006A92B7 /* FVSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */; };
 		AAD596571C35A42E006A92B7 /* FVSettingsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */; };
@@ -164,6 +165,7 @@
 		AA6F5B861C2D30D800DB156C /* FVMainCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		AA6F5B931C2E024200DB156C /* FVBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBannerView.h; sourceTree = "<group>"; };
 		AA6F5B941C2E024200DB156C /* FVBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBannerView.m; sourceTree = "<group>"; };
+		AAAC10CF1CADD2F000D9670A /* FVHueSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVHueSlider.swift; sourceTree = "<group>"; };
 		AAD596501C34CDF4006A92B7 /* FVSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		AAD596511C34CDF4006A92B7 /* FVSettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FVSettingsTableViewCell.xib; sourceTree = "<group>"; };
 		AAD596551C35A42E006A92B7 /* FVSettingsTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FVSettingsTableHeader.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				AA6F5B701C2D152A00DB156C /* FVMyPatternViewController.xib */,
 				AA22E8A51C4191200030CC83 /* FVSolidColorViewController.swift */,
 				AA22E8A61C4191200030CC83 /* FVSolidColorViewController.xib */,
+				AAAC10CF1CADD2F000D9670A /* FVHueSlider.swift */,
 				AA22E8A91C4191A00030CC83 /* FVSetLEDsViewController.swift */,
 				AA22E8AA1C4191A00030CC83 /* FVSetLEDsViewController.xib */,
 				AA22E8B51C41B64B0030CC83 /* FVVoxelPreviewViewController.swift */,
@@ -620,6 +623,7 @@
 				AA22E8D31C4C15AF0030CC83 /* FVVoxel.swift in Sources */,
 				AA6F5B4A1C2D012000DB156C /* HNAbstractViewController.swift in Sources */,
 				AA6F5B611C2D064000DB156C /* FVPreloadedPatternViewController.swift in Sources */,
+				AAAC10D01CADD2F000D9670A /* FVHueSlider.swift in Sources */,
 				AA6F5B711C2D152A00DB156C /* FVMyPatternViewController.swift in Sources */,
 				AAD596521C34CDF4006A92B7 /* FVSettingsTableViewCell.swift in Sources */,
 				AA6F5B421C2CAF6C00DB156C /* HNDrawerViewController.swift in Sources */,

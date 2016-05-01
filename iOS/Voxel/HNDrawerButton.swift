@@ -47,7 +47,7 @@ class HNDrawerButton: UIButton, UIGestureRecognizerDelegate {
         
         self.backgroundColor = UIColor.clearColor()
         
-        let longRec = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+        let longRec = UILongPressGestureRecognizer(target: self, action: #selector(longPressed))
         longRec.minimumPressDuration = 0
         longRec.delegate = self
         self.addGestureRecognizer(longRec)

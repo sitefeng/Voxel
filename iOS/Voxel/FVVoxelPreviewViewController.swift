@@ -67,7 +67,7 @@ class FVVoxelPreviewViewController: UIViewController {
         super.viewDidLoad()
         
         ledImageView.userInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: "voxelTapped:")
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(FVVoxelPreviewViewController.voxelTapped(_:)))
         ledImageView.addGestureRecognizer(tapRecognizer)
     }
     
@@ -106,7 +106,7 @@ class FVVoxelPreviewViewController: UIViewController {
         for i in 0 ..< Int(maxHorizontalModules) {
             self.moduleColors[i] = ledColors
             self.moduleSelectionViewPosition = i
-            self.drawLEDColors(ledColors)
+            self.drawLEDColors(ledColors, module: moduleSelectionViewPosition)
         }
         
         self.moduleSelectionViewPosition = 0
@@ -174,8 +174,25 @@ class FVVoxelPreviewViewController: UIViewController {
     
     // MARK: Public Methods
     func setLEDsColorsForCurrentModule(colors: [UIColor]) {
-        self.moduleColors[moduleSelectionViewPosition] = colors
-        self.drawLEDColors(colors)
+        self.setLEDColorsforModule(colors, module: moduleSelectionViewPosition)
+    }
+    
+    func setLEDColorsforModule(colors: [UIColor], module: Int) {
+        self.moduleColors[module] = colors
+        self.drawLEDColors(colors, module: module)
+    }
+    
+    
+    func setSolidColorForAllModules(color: UIColor) {
+        if self.moduleColors.count == 0 {
+            return
+        }
+        
+        for i in 0..<maxHorizontalModules {
+            let colors = [UIColor](count: FVVoxel.numLEDsPerModule, repeatedValue: color)
+            self.setLEDColorsforModule(colors, module: i)
+        }
+        
     }
     
     
@@ -219,12 +236,12 @@ class FVVoxelPreviewViewController: UIViewController {
     }
     
     
-    private func drawLEDColors(array: [UIColor]) {
+    private func drawLEDColors(array: [UIColor], module: Int) {
         
         let totalWidth = UIScreen.mainScreen().bounds.width - 2*margin
         let width = moduleSelectionView.frame.size.width
         let height = ledImageView.frame.size.height
-        let xPos = CGFloat(moduleSelectionViewPosition) * width
+        let xPos = CGFloat(module) * width
         
         UIGraphicsBeginImageContext(CGSize(width: totalWidth, height: ledImageView.bounds.height))
         self.ledImageView.image?.drawInRect(self.ledImageView.bounds)

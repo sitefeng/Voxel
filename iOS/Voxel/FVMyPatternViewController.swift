@@ -74,7 +74,8 @@ class FVMyPatternViewController: HNAbstractViewController, UICollectionViewDeleg
         switch indexPath.row {
         case 0: // Solid Color
             let solidColorVC: FVSolidColorViewController! = FVSolidColorViewController(nibName:"FVSolidColorViewController", bundle: nil)
-            self.presentViewController(solidColorVC, animated: true, completion: nil)
+            let navController = FVNavigationController(rootViewController: solidColorVC)
+            self.presentViewController(navController, animated: true, completion: nil)
   
             
         case 1: // Set LEDs

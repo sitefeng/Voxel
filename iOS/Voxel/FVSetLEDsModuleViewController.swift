@@ -58,9 +58,9 @@ class FVSetLEDsModuleViewController: UIViewController, UIGestureRecognizerDelega
         self.moduleLabel.text = labelTitle
         
         // Gesture Recognizer
-        self.panRec = UIPanGestureRecognizer(target: self, action: "drawOnLEDRecognized:")
+        self.panRec = UIPanGestureRecognizer(target: self, action: #selector(drawOnLEDRecognized(_:)))
 
-        self.longPressRec = UILongPressGestureRecognizer(target: self, action: "longPressRecognized:")
+        self.longPressRec = UILongPressGestureRecognizer(target: self, action: #selector(longPressRecognized(_:)))
         longPressRec.minimumPressDuration = 0.0
         longPressRec.requireGestureRecognizerToFail(self.panRec)
 
