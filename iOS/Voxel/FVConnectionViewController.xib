@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FVConnectionViewController" customModule="Voxel" customModuleProvider="target">
@@ -17,11 +17,59 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainGradient" translatesAutoresizingMaskIntoConstraints="NO" id="pwe-8s-ua3">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yw4-ZJ-jev">
+                    <rect key="frame" x="8" y="191" width="584" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="WSD-FU-FA4"/>
+                    </constraints>
+                    <string key="text">1. Power on your Voxel   2. Connect Voxel by going into "Settings" app on your iOS device, and tap on "Wifi"  3. Select the Voxel device when it's detected</string>
+                    <color key="textColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="connection" translatesAutoresizingMaskIntoConstraints="NO" id="TA6-Dc-rMF">
+                    <rect key="frame" x="213" y="83" width="175" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="175" id="6ss-CP-tq1"/>
+                        <constraint firstAttribute="height" constant="100" id="Fff-Pe-cEn"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Having Issues Connecting?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eK8-Dk-H7X">
+                    <rect key="frame" x="192" y="411" width="216" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="23" id="DKT-UY-kMJ"/>
+                        <constraint firstAttribute="width" constant="216" id="gi6-PV-qCk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.65490196079999996" green="0.76470588240000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ma-Dx-Hyj">
+                    <rect key="frame" x="234" y="442" width="132" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.64705882349999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="daH-Nu-Xrg"/>
+                        <constraint firstAttribute="width" constant="132" id="tc1-J3-W3f"/>
+                    </constraints>
+                    <state key="normal" title="Contact Support">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="TA6-Dc-rMF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="83" id="29u-9w-1Ww"/>
+                <constraint firstItem="6ma-Dx-Hyj" firstAttribute="top" secondItem="eK8-Dk-H7X" secondAttribute="bottom" constant="8" id="3XH-wc-8BU"/>
+                <constraint firstItem="eK8-Dk-H7X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ATc-SV-xiH"/>
+                <constraint firstItem="TA6-Dc-rMF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CfQ-sz-Tw2"/>
+                <constraint firstAttribute="trailing" secondItem="Yw4-ZJ-jev" secondAttribute="trailing" constant="8" id="DQi-dY-hD8"/>
                 <constraint firstItem="pwe-8s-ua3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RXT-le-g4S"/>
+                <constraint firstItem="Yw4-ZJ-jev" firstAttribute="top" secondItem="TA6-Dc-rMF" secondAttribute="bottom" constant="8" id="Rwd-Z4-yRS"/>
+                <constraint firstItem="6ma-Dx-Hyj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vvc-IU-FNj"/>
+                <constraint firstItem="Yw4-ZJ-jev" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="X5r-dz-PMf"/>
                 <constraint firstAttribute="bottom" secondItem="pwe-8s-ua3" secondAttribute="bottom" id="eoL-e5-7R6"/>
+                <constraint firstItem="eK8-Dk-H7X" firstAttribute="top" secondItem="Yw4-ZJ-jev" secondAttribute="bottom" constant="20" id="gQH-UR-PMY"/>
                 <constraint firstAttribute="trailing" secondItem="pwe-8s-ua3" secondAttribute="trailing" id="h5s-5c-flY"/>
                 <constraint firstItem="pwe-8s-ua3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="l2v-5o-dTq"/>
             </constraints>
@@ -29,6 +77,7 @@
         </view>
     </objects>
     <resources>
+        <image name="connection" width="96" height="96"/>
         <image name="mainGradient" width="2" height="1920"/>
     </resources>
 </document>

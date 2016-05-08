@@ -23,7 +23,7 @@ class FVSettingsTableViewCell: UITableViewCell {
     }
 
 
-    func sliderValueChanged(sender: UISlider) {
+    @objc func sliderValueChanged(sender: UISlider) {
         
         let value = sender.value
         if (indexPath != nil && settingsController != nil) {

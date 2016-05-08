@@ -16,7 +16,7 @@ class FVSettingsViewController: HNAbstractViewController, UITableViewDelegate, U
     let kGeneralTableViewCellIdentifier = "kGeneralTableViewCellIdentifier"
     let kSettingsTableViewHeaderIdentifier = "kSettingsTableViewHeaderIdentifier"
     
-    let sectionTitles = ["Voxel Configuration", "Start Delay", "LED Frequency", "LED Brightness"]
+    let sectionTitles = ["Voxel Configuration", "Start Delay (s)", "LED Frequency (Hz)", "LED Brightness (%)"]
     let configurationStrings = ["Paint Brush Mode (1)", "Paint Brush Mode (2L)","Paint Brush Mode (2R)","Paint Brush Mode (3)","Paint Brush Mode (4L)", "Paint Brush Mode (4R)", "Paint Brush Mode (5)", "Light Saber Mode (1)", "Light Saber Mode (2)", "Light Saber Mode (3)"]
     
     let sectionNumRows = [1, 1, 1, 1, 2]
